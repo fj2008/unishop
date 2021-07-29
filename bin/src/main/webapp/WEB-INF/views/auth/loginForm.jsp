@@ -263,9 +263,5 @@
       <p>Footer</p>
     </div>
 
-<script>
-	alert("아이디 : ${sessionScope.userId}");
-</script>
-
 </body>
 </html>

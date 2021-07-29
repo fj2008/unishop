@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNISHOP Sign in</title>
+    <title>UNISHOP Sign up</title>
     <style>
   
         .d-flex{
@@ -37,14 +37,15 @@
           margin: 0px auto;
         }
         .main{
-          margin-top: 100px;
-          height: 566px;
+          margin-top: 4px;
+          margin-bottom: 0px;
+          height: 666px;
         }
         .form-signin {
           width: 100%;
-          max-width: 330px;
+          max-width: 600px;
           padding: 15px;
-          margin: auto;
+          margin: 0 auto;
         }
 
         .dropdown-menu{
@@ -94,6 +95,9 @@
         }
         .logo{
           height: 60px;
+        }
+        h2{
+          margin-bottom: 6px;
         }
   </style>
 </head>
@@ -218,43 +222,40 @@
     </div>
 
     <!--login-->
-    <div class="main">
+     <div class="main">
       <main class="form-signin">
-    
+       
+        <h2>Sign Up</h2>
+        <form action="/auth/join" method="post">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ID</label>
+            <input type="text" class="form-control" placeholder="Input ID" name="username">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Input Password" name="password">
+          </div>
+          <%--비밀번호확인 나중에 구현 <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Input Password Again">
+          </div> --%>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Email</label>
+            <input type="text" class="form-control"  placeholder="Input Email" name="email">
+          </div>
+          <input class="btn btn-info" type="button"onClick="goPopup();" value="findaddress" />
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Address</label>
+            <input type="text" class="form-control" placeholder="Input Address" name="address" id="address">
+          </div>
+          <%--서브주소 나중에구현 <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Address2</label>
+            <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Input Address2">
+          </div> --%>
 
-        <form>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >Sign up</button>
           
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      
-          <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Id</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
-      
-          <div class="checkbox mb-3">
-            <!-- <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label> -->
-            <div class="find">
-              <div class="find-id">
-                <a href="/auth/findId">아이디 찾기</a>
-                <a href="/auth/findPw">비밀번호 찾기</a>
-              </div>
-              <div>
-                <a href="/auth/joinForm">회원가입</a>
-              </div>
-            </div>
-          </div>
-          
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
-      
-        
       </main>
     </div>
 
@@ -263,9 +264,19 @@
       <p>Footer</p>
     </div>
 
-<script>
-	alert("아이디 : ${sessionScope.userId}");
-</script>
+    <script>
+	function goPopup() {
 
+		var pop = window.open("/juso", "pop",
+				"width=570,height=420, scrollbars=yes, resizable=yes");
+
+	}
+
+	function jusoCallBack(roadFullAddr) {
+		let addressEL = document.querySelector("#address");
+		addressEL.value=roadFullAddr;
+		console.log(addressEL)
+	}
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNISHOP Sign in</title>
+    <title>UNISHOP Find ID</title>
     <style>
   
         .d-flex{
@@ -95,6 +95,10 @@
         .logo{
           height: 60px;
         }
+
+        
+
+        
   </style>
 </head>
 <body>
@@ -222,35 +226,43 @@
       <main class="form-signin">
     
 
-        <form>
+        <form class="form-wrap">
           
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          <h1 class="h3 mb-3 fw-normal">Please input your email</h1>
       
           <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Id</label>
+            <input type="text" class="form-control" id="textsms" placeholder="phoneNumber"name="phoneNumber">
+            <label for="floatingInput">PhoneNumber</label>
           </div>
-          <div class="form-floating">
+          
+          
+
+          <!-- <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
-          </div>
+          </div> -->
       
           <div class="checkbox mb-3">
             <!-- <label>
               <input type="checkbox" value="remember-me"> Remember me
             </label> -->
             <div class="find">
-              <div class="find-id">
-                <a href="/auth/findId">아이디 찾기</a>
-                <a href="/auth/findPw">비밀번호 찾기</a>
-              </div>
+              <!-- <div class="find-id">
+                <a href="#" style="color: #868686">Find ID</a>
+                <a href="#" style="color: #868686">/ PW</a>
+              </div> -->
               <div>
-                <a href="/auth/joinForm">회원가입</a>
+                <a href="/auth/findIdsms" style="color: #868686">인증하기</a>
               </div>
             </div>
           </div>
           
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+           <div class="form-floating">
+            <input type="text" class="form-control" id="textsms" placeholder="phoneNumber">
+            <label for="floatingInput">인증번호</label>
+          </div>
+          
+          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >Confirm </button>
           <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
       
@@ -262,10 +274,6 @@
     <div class="jumbotron text-center" style="margin-bottom:0">
       <p>Footer</p>
     </div>
-
-<script>
-	alert("아이디 : ${sessionScope.userId}");
-</script>
 
 </body>
 </html>
