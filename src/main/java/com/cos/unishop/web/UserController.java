@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.unishop.domain.User;
 import com.cos.unishop.domain.UserRepository;
+import com.cos.unishop.utils.CoolSms;
 import com.cos.unishop.utils.Script;
 
 import lombok.RequiredArgsConstructor;
@@ -84,14 +85,18 @@ public class UserController {
     public String checkNumber(String checkNumber) {
     	
     	String smsNumber = (String) session.getAttribute("smsNumber");
+    	String phoenNumber = (String) session.getAttribute("phoneNumber");
     	
+    	System.out.println("phoenNumber : "+phoenNumber);
     	System.out.println("checkNumber : "+checkNumber);
     	System.out.println("smsNumber : "+smsNumber);
     	
-    	// 전화번호로 select해서 유저 아이디 찾기
-    	session.setAttribute("userId", "ssar");
-    	
     	if(checkNumber.equals(smsNumber)) {
+    	// 전화번호로 select해서 유저 아이디 찾기
+    	User userEntity = userRepository.mPhoneNumber(phoenNumber);
+    	System.out.println(userEntity);
+    	session.setAttribute("username", userEntity.getUsername());
+    	
     		return "redirect:/auth/loginForm";
     	}else {
     		return "redirect:/auth/findId";
@@ -107,10 +112,11 @@ public class UserController {
             String ran = Integer.toString(rand.nextInt(10));
             numStr += ran;
         }
+        
 
         System.out.println("수신자 번호 : " + phoneNumber);
         System.out.println("인증번호 : " + numStr);
-        //CoolSms.certifiedPhoneNumber(phoneNumber, numStr);
+        CoolSms.certifiedPhoneNumber(phoneNumber, numStr);
         
        
         session.setAttribute("smsNumber", numStr);
