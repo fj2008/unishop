@@ -271,7 +271,7 @@
 					</div>
 				</div>
 
-				<form action="/checkNumber" method="get">
+				<form action="/auth/checkNumberId" method="get">
 					<div class="form-floating">
 						<input type="text" class="form-control" id="textsms" name="checkNumber"
 							placeholder="phoneNumber"> <label for="floatingInput">인증번호</label>

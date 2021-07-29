@@ -23,16 +23,22 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNISHOP Find ID</title>
+<title>UNISHOP Mypage</title>
+<link rel="stylesheet" type="text/css" href="./css/sidebars.css">
+<link rel="stylesheet" type="text/css" href="./css/mypage.css">
 <style>
 .d-flex {
 	width: 400px;
 }
 
+.header-top {
+	width: 1200px;
+	width: 100%;
+}
+
 .header {
 	position: relative;
 	padding: 0px;
-	width: 100%;
 	margin: 0px auto;
 }
 
@@ -44,7 +50,7 @@
 }
 
 .main-content {
-	position: relative;
+	display: flex;
 	padding: 16px 0px;
 	width: 1200px;
 	margin: 0px auto;
@@ -52,7 +58,11 @@
 
 .main {
 	margin-top: 100px;
-	height: 566px;
+	height: 600px;
+}
+
+.content-array {
+	width: 1200px;
 }
 
 .form-signin {
@@ -104,12 +114,88 @@
 
 .icon {
 	display: flex;
-	width: 30px;
+	width: 70px;
 	justify-content: space-between;
+}
+
+hr {
+	width: 1200px;
+	margin: 0 auto;
 }
 
 .logo {
 	height: 60px;
+}
+
+.new-main {
+	display: flex;
+	margin: 0 auto;
+	padding: 16px 0px;
+	width: 1200px;
+}
+
+.content-img {
+	margin: 15px;
+	display: flex;
+	justify-content: space-between;
+	height: 500px;
+	width: 400px;
+}
+
+p, h1, h2, h3 {
+	display: block;
+	margin: 0 auto;
+	font-family: 'UniqloProRegular', 'UniqloProLight', 'UniqloProBold',
+		'NanumSquare', sans-serif;
+	padding: 20px 0px;
+	/* width: 1200px; */
+}
+
+.sidebars {
+	display: flex;
+}
+
+.section {
+	margin-left: 180px;
+	width: 70%;
+}
+
+article {
+	height: 500px;
+}
+
+.contents>div>img {
+	display: block;
+	height: 100px;
+	width: 100px;
+}
+
+.contents {
+	display: inline-block;
+	width: 70%;
+	align-items: center;
+	width: 150px;
+}
+
+.contents>hr {
+	display: block;
+	width: 80%;
+}
+
+.contents>p {
+	display: inline-block;
+	width: auto;
+}
+
+.contents-container {
+	display: inline-block;
+	justify-content: space-between;
+	width: 95%;
+	margin-left: 70px;
+}
+
+.section>div>h2 {
+	width: 1200px;
 }
 </style>
 </head>
@@ -209,9 +295,12 @@
 					<nav class="navbar navbar-light bg-light">
 						<div class="container-fluid">
 							<div class="icon">
-
 								<div>
-									<a href="#"><img
+									<a href="/myPage"><img
+										src="https://img.icons8.com/windows/32/000000/shopping-cart.png" /></a>
+								</div>
+								<div>
+									<a href="#" onclick="logout()"><img
 										src="https://img.icons8.com/windows/32/000000/user-male-circle.png" /></a>
 								</div>
 							</div>
@@ -233,82 +322,106 @@
 			</div>
 		</div>
 	</div>
+	<!--header End-->
 
-	<!--login-->
-	<div class="main">
-		<main class="form-signin">
-
-
-			<div class="form-wrap">
-
-				<h1 class="h3 mb-3 fw-normal">Please input your email</h1>
-
-				<div class="form-floating">
-					<input type="text" class="form-control" id="textsms"
-						placeholder="phoneNumber" name="phoneNumber"> <label
-						for="floatingInput">PhoneNumber</label>
-				</div>
-
-
-
-				<!-- <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div> -->
-
-				<div class="checkbox mb-3">
-					<!-- <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label> -->
-					<div class="find">
-						<!-- <div class="find-id">
-                <a href="#" style="color: #868686">Find ID</a>
-                <a href="#" style="color: #868686">/ PW</a>
-              </div> -->
-						<div>
-							<a href="#" style="color: #868686" onClick="acceptNumber()">인증번호 받기</a>
+	<main>
+		<!--side bar-->
+		<div class="sidebars">
+			<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+				<a href="#"
+					class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+					<svg class="bi me-2" width="30" height="24">
+						<use xlink:href="#bootstrap" /></svg> <span class="fs-5 fw-semibold">My
+						page</span>
+				</a>
+				<ul class="list-unstyled ps-0">
+					<li class="mb-1">
+						<button
+							class="btn btn-toggle align-items-center rounded collapsed"
+							data-bs-toggle="collapse" data-bs-target="#home-collapse"
+							aria-expanded="true">Service Information</button>
+						<div class="collapse show" id="home-collapse">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<li><a href="/CommentsManagement" class="link-dark rounded">Comments
+										management</a></li>
+								<li><a href="/bucket" class="link-dark rounded">Shopping
+										bucket</a></li>
+								<li><a href="#" class="link-dark rounded">Payment list</a></li>
+							</ul>
 						</div>
-					</div>
-				</div>
+					</li>
+					<!-- <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                Dashboard
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">Overview</a></li>
+                  <li><a href="#" class="link-dark rounded">Weekly</a></li>
+                  <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                  <li><a href="#" class="link-dark rounded">Annually</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                Orders
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">New</a></li>
+                  <li><a href="#" class="link-dark rounded">Processed</a></li>
+                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                  <li><a href="#" class="link-dark rounded">Returned</a></li>
+                </ul>
+              </div>
+            </li> -->
+					<li class="border-top my-3"></li>
+					<li class="mb-1">
+						<button
+							class="btn btn-toggle align-items-center rounded collapsed"
+							data-bs-toggle="collapse" data-bs-target="#account-collapse"
+							aria-expanded="false">Account</button>
+						<div class="collapse" id="account-collapse">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
+								<li><a href="/CommentsManagement" class="link-dark rounded">Profile
+										modification</a></li>
+								<li><a href="#" class="link-dark rounded">Settings</a></li>
+								<li><a href="#" class="link-dark rounded">Sign out</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--side bar End-->
 
-				<form action="/auht/checkNumberPw" method="get">
-					<div class="form-floating">
-						<input type="text" class="form-control" id="textsms" name="checkNumber"
-							placeholder="phoneNumber"> <label for="floatingInput">인증번호</label>
-					</div>
-	
-					<button class="w-100 btn btn-lg btn-primary" type="submit"
-						style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;">Confirm
-					</button>
-				</form>
-				
-				<p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+		<!--메인 section-->
+		<section class="section">
+			<div>
+				<h2>Overview</h2>
 			</div>
 
+			<hr />
 
-		</main>
-	</div>
 
-	<!--Footer-->
+
+		</section>
+
+	</main>
+
+	<!--footer-->
 	<div class="jumbotron text-center" style="margin-bottom: 0">
 		<p>Footer</p>
 	</div>
 
+
 	<script>
-		async function acceptNumber(){
-			alert("클릭됨");
-			
-			let phoneNumber = document.querySelector("#textsms").value;
-			alert(phoneNumber);
-			
-			fetch("/auth/findIdsms?phoneNumber="+phoneNumber);
+		function logout() {
+			alert("로그아웃 하시겠습니까?");
+			location.href = "/auth/loginForm";
 		}
-		
-		
-		
-		
-	
-		
 	</script>
 </body>
 </html>
