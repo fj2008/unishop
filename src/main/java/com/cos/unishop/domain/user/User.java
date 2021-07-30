@@ -1,4 +1,4 @@
-package com.cos.unishop.domain;
+package com.cos.unishop.domain.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cos.unishop.domain.User;
-import com.cos.unishop.domain.UserRepository;
+import com.cos.unishop.Sex;
+import com.cos.unishop.domain.user.User;
+import com.cos.unishop.domain.user.UserRepository;
 import com.cos.unishop.utils.CoolSms;
 import com.cos.unishop.utils.Script;
 
@@ -27,6 +28,8 @@ public class UserController {
 	// 로그인페이지로 가는컨트롤러
     @GetMapping("/auth/loginForm")
     public String loginForm() {
+    	
+    	
         return "auth/loginForm";
     }
 

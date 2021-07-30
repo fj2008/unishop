@@ -181,7 +181,7 @@ p, h1, h2, h3 {
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
-												<li><a class="dropdown-item" href="#">셔츠</a></li>
+												<li><a class="dropdown-item" href="/post/productPage">셔츠</a></li>
 												<li><a class="dropdown-item" href="#">반팔</a></li>
 												<li><a class="dropdown-item" href="#">원피스</a></li>
 											</div>

@@ -4,8 +4,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import com.cos.unishop.domain.UserRepository;
+import com.cos.unishop.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,4 +23,11 @@ public class PostController {
 	    public String mainProduct() {
 	        return "post/index";
 	    }
+	    
+	    @GetMapping("/post/productPage")
+	    public String productPage() {
+	    	return "post/productPage";
+	    }
+	    
+	  
 }
