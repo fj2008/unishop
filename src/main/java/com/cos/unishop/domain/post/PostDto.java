@@ -25,7 +25,7 @@ public class PostDto {
 	private String detail;
 	private int price;
 	private String size;
-	
-	private String gender;
+	private String category;
+	private Sex gender;
 	
 }

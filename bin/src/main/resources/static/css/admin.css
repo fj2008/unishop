@@ -1,0 +1,35 @@
+.register{
+    display: flex;
+    width: 600px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(194, 194, 194);
+}
+.input-wrap{
+    display: flex;
+    flex: 4;
+    width: 400px;
+    margin: 10px;
+}
+.input-parent{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.input-parent > h4 {
+    display: flex;
+    font-size: 16px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6px;
+}
+.sex{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}

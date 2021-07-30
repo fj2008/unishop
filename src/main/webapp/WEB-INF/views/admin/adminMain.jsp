@@ -292,7 +292,7 @@
                   <div class="icon">
                     
                     <!-- <div>
-                      <a href="#"><img src="https://img.icons8.com/windows/32/000000/user-male-circle.png"/></a>
+                      <a href="#"><img src="/upload/${postEntity.image}"/></a>
                     </div> -->
                   </div>
                   <a class="navbar-brand"></a>

@@ -28,6 +28,7 @@ public class Post {
 	private String detail;
 	private int price;
 	private String size;
+	private String category;
 	
 	//enum상수로 db에 남녀만 들어올수있도록 필드를 작성
 	@Enumerated(EnumType.STRING)

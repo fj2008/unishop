@@ -10,9 +10,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.cos.unishop.domain.post.Post;
+import com.cos.unishop.domain.post.PostDto;
 import com.cos.unishop.domain.post.PostRepository;
 import com.cos.unishop.domain.user.UserRepository;
 import com.cos.unishop.utils.MyPath;
@@ -41,20 +41,33 @@ public class AdminController {
 
 	// 관리자 상품업데이트컨트롤러
 	@PostMapping("/admin/update")
-	public String productUpdate() {
+	public String productUpdate(PostDto postDto) {
+		UUID uuid = UUID.randomUUID();
+		Post post = new Post();
+		System.out.println(postDto.getImage());
+		String imageFileName = uuid + "_"+postDto.getImage().getOriginalFilename();
 		
-//		UUID uuid = UUID.randomUUID();
-//		String imageFileName = uuid + "_" + image.getOriginalFilename();
-//
-//		Path imagePath = Paths.get(MyPath.IMAGEPAHT + imageFileName);
-//
-//		try {
-//			Files.write(imagePath, image.getBytes());
-//			System.out.println(imagePath);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		postRepository.save(post);
+		Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
+
+		try {
+			Files.write(imagePath, postDto.getImage().getBytes());
+			
+			post.setProductname(postDto.getProductname());
+			post.setImage(imageFileName);
+			post.setDetail(postDto.getDetail());
+			post.setPrice(postDto.getPrice());
+			post.setSize(postDto.getSize());
+			post.setGender(postDto.getGender());
+			post.setCategory(postDto.getCategory());
+			postRepository.save(post);
+			
+		}catch(Exception e) {
+			
+		}
+		
 		return "redirect:/admin/productRegister";
 	}
+	
+	
+
 }

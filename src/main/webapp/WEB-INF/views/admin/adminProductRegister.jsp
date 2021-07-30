@@ -292,7 +292,7 @@ article {
 							<div class="icon">
 
 								<!-- <div>
-                      <a href="#"><img src="https://img.icons8.com/windows/32/000000/user-male-circle.png"/></a>
+                      <a href="#"><img src="/upload/${postEntity.image}"/></a>
                     </div> -->
 							</div>
 							<a class="navbar-brand"></a>
@@ -461,10 +461,10 @@ article {
 									<select class="form-select" id="inputGroupSelect04"
 										aria-label="Example select with button addon" name="size">
 										<option selected>Choose...</option>
-										<option value="1">S</option>
-										<option value="2">M</option>
-										<option value="3">L</option>
-										<option value="4">XL</option>
+										<option value="S">S</option>
+										<option value="M">M</option>
+										<option value="L">L</option>
+										<option value="XL">XL</option>
 									</select>
 									<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
 								</div>
@@ -508,6 +508,10 @@ article {
 
 					</div>
 
+
+
+
+
 					<!-- 우리 카테고리 구현해야합니다. 성별에 따라서 옷도 다르고 그리고 상위항목도 있습니다. 상의의 셔츠라던가 -->
 					<!-- <div>
             <div class="input-parent">
@@ -522,6 +526,45 @@ article {
               
             </div>
           </div> -->
+
+					<div>
+						<div class="input-parent">
+							<h4>카테고리</h4>
+							<div class="input-wrap">
+								<div class="input-group">
+									<select class="form-select" id="inputGroupSelect04"
+										aria-label="Example select with button addon" name="category">
+										<option selected>Choose...</option>
+										<option value="m_shirts">M-셔츠</option>
+										<option value="m_shortsleeve">M-반팔</option>
+										<option value="m_longsleeves">M-긴팔</option>
+										<option value="m_jeans">M-청바지</option>
+										<option value="m_slacks">M-슬랙스</option>
+										<option value="m_widepants">M-와이드팬츠</option>
+										<option value="m_cardigan">M-가디건</option>
+										<option value="m_trenchcoat">M-트렌치코트</option>
+										<option value="m_coat">M-코트</option>
+										
+										<option value="w_shirts">W-셔츠</option>
+										<option value="w_shortsleeve">W-반팔</option>
+										<option value="w_onepiece">W-원피스</option>
+										<option value="w_jeans">W-청바지</option>
+										<option value="w_skirt">W-치마</option>
+										<option value="w_widepants">W-와이드팬츠</option>
+										<option value="w_cardigan">W-가디건</option>
+										<option value="w_trenchcoat">W-트렌치코트</option>
+										<option value="w_coat">W-코트</option>
+									
+										
+									</select>
+									<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
 
 					<div>
 						<div class="input-parent">

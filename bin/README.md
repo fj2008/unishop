@@ -2,9 +2,9 @@
 
 ###데이터베이스 생성 방법
 ```sql
-CREATE USER 'korea'@'%' IDENTIFIED BY 'korea1234';
-GRANT ALL PRIVILEGES ON *.* TO 'korea'@'%';
-CREATE database koreadb;
+CREATE USER 'unishop'@'%' IDENTIFIED BY 'korea1234';
+GRANT ALL PRIVILEGES ON *.* TO 'unishop'@'%';
+CREATE database unishopdb;
 ```
 
 ###추가 의존성
