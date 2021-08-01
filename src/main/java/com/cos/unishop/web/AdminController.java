@@ -42,9 +42,10 @@ public class AdminController {
 	// 관리자 상품업데이트컨트롤러
 	@PostMapping("/admin/update")
 	public String productUpdate(PostDto postDto) {
+	
 		UUID uuid = UUID.randomUUID();
 		Post post = new Post();
-		System.out.println(postDto.getImage());
+		
 		String imageFileName = uuid + "_"+postDto.getImage().getOriginalFilename();
 		
 		Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
@@ -59,10 +60,11 @@ public class AdminController {
 			post.setSize(postDto.getSize());
 			post.setGender(postDto.getGender());
 			post.setCategory(postDto.getCategory());
+			
 			postRepository.save(post);
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 		
 		return "redirect:/admin/productRegister";

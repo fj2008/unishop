@@ -90,7 +90,7 @@
           margin-bottom: 4px;
         }
         .dropdown-item{
-          font-family: '맑은 고딕', 'Malgun Gothic', 돋움;
+          font-family: '留��� 怨���', 'Malgun Gothic', ����;
           
         }
         .dropdown-in-close{
@@ -137,7 +137,7 @@
         } 
 
 
-        /* 아래 물품 이미지 입니다 */
+        /* ���� 臾쇳�� �대�몄� ������ */
         .content-img {
           margin: 5px;
           
@@ -153,7 +153,7 @@
           
         }
 
-        /* 상단 헤더 상품 이미지 입니다 */
+        /* ���� �ㅻ�� ���� �대�몄� ������ */
         .content-img-top {
           /* margin: 15px; */
           
@@ -181,7 +181,7 @@
         }
         
 
-        /* 상품 헤더 */
+        /* ���� �ㅻ�� */
         .main-top-information{
           margin: 0 auto;
           width: 1200px;
@@ -196,7 +196,7 @@
           justify-content: space-between;
         }
 
-        /* 상품 헤더 왼쪽 상단 */
+        /* ���� �ㅻ�� �쇱そ ���� */
         .top-width{
           
           width: 744px;
@@ -212,7 +212,7 @@
           
           
         }
-        /* 상품 헤더 왼쪽 상단안에 있는 h2 제목 */
+        /* ���� �ㅻ�� �쇱そ ���⑥���� ���� h2 ��紐� */
         .top-width > h2{
           display: flex;
           /* flex-direction: row;
@@ -220,7 +220,7 @@
           flex: 1;
           justify-content: center;
         }
-        /* 상품 헤더 왼쪽 상단안에 있는 글씨 */
+        /* ���� �ㅻ�� �쇱そ ���⑥���� ���� 湲��� */
         .top-width > h4{
           display: flex;
           align-items: center;
@@ -247,7 +247,7 @@
           padding: 0px;
           
         }
-        /* 상품 설명 글자, 사이즈, */
+        /* ���� �ㅻ� 湲���, �ъ�댁�, */
         /* .products-info{
           display: flex;
           flex-direction: column;
@@ -262,7 +262,7 @@
           margin-bottom: 20px;
           
         }
-        /* 여기서 flex을 줘서 요소 값이 곂치지 않게 합니다 */
+        /* �ш린�� flex�� 以��� ���� 媛��� 怨�移�吏� ��寃� �⑸���� */
         .products > .content-img{
           display: flex;
           flex: 2;
@@ -302,22 +302,22 @@
                             </a>
                           <ul class="dropdown-menu">
                             <div class="dropdown-in">
-                              <li><span class="dropdown-item-text">상의</span></li>
-                              <li><a class="dropdown-item" href="#">셔츠</a></li>
-                              <li><a class="dropdown-item" href="#">반팔</a></li>
-                              <li><a class="dropdown-item" href="#">원피스</a></li>
+                              <li><span class="dropdown-item-text">����</span></li>
+                              <li><a class="dropdown-item" href="#">��痢�</a></li>
+                              <li><a class="dropdown-item" href="#">諛���</a></li>
+                              <li><a class="dropdown-item" href="#">���쇱��</a></li>
                             </div>
                             <div class="dropdown-in">
-                              <li><span class="dropdown-item-text">하의</span></li>
-                              <li><a class="dropdown-item" href="#">청바지</a></li>
-                              <li><a class="dropdown-item" href="#">치마</a></li>
-                              <li><a class="dropdown-item" href="#">와일드팬츠</a></li>
+                              <li><span class="dropdown-item-text">����</span></li>
+                              <li><a class="dropdown-item" href="#">泥�諛�吏�</a></li>
+                              <li><a class="dropdown-item" href="#">移�留�</a></li>
+                              <li><a class="dropdown-item" href="#">���쇰���ъ�</a></li>
                             </div>
                             <div class="dropdown-in">
-                              <li><span class="dropdown-item-text">아우터</span></li>
-                              <li><a class="dropdown-item" href="#">가디건</a></li>
-                              <li><a class="dropdown-item" href="#">트렌치코트</a></li>
-                              <li><a class="dropdown-item" href="#">코트</a></li>
+                              <li><span class="dropdown-item-text">���고��</span></li>
+                              <li><a class="dropdown-item" href="#">媛���嫄�</a></li>
+                              <li><a class="dropdown-item" href="#">�몃��移�肄���</a></li>
+                              <li><a class="dropdown-item" href="#">肄���</a></li>
                             </div>
                             <div class="dropdown-in">
                               <button type="button" class="btn-close" aria-label="Close"></button>
@@ -332,22 +332,22 @@
                           </a>
                         <ul class="dropdown-menu">
                           <div class="dropdown-in">
-                            <li><span class="dropdown-item-text">상의</span></li>
-                            <li><a class="dropdown-item" href="#">셔츠</a></li>
-                            <li><a class="dropdown-item" href="#">반팔</a></li>
-                            <li><a class="dropdown-item" href="#">긴팔</a></li>
+                            <li><span class="dropdown-item-text">����</span></li>
+                            <li><a class="dropdown-item" href="#">��痢�</a></li>
+                            <li><a class="dropdown-item" href="#">諛���</a></li>
+                            <li><a class="dropdown-item" href="#">湲댄��</a></li>
                           </div>
                           <div class="dropdown-in">
-                            <li><span class="dropdown-item-text">하의</span></li>
-                            <li><a class="dropdown-item" href="#">청바지</a></li>
-                            <li><a class="dropdown-item" href="#">슬랙스</a></li>
-                            <li><a class="dropdown-item" href="#">와일드팬츠</a></li>
+                            <li><span class="dropdown-item-text">����</span></li>
+                            <li><a class="dropdown-item" href="#">泥�諛�吏�</a></li>
+                            <li><a class="dropdown-item" href="#">�щ����</a></li>
+                            <li><a class="dropdown-item" href="#">���쇰���ъ�</a></li>
                           </div>
                           <div class="dropdown-in">
-                            <li><span class="dropdown-item-text">아우터</span></li>
-                            <li><a class="dropdown-item" href="#">가디건</a></li>
-                            <li><a class="dropdown-item" href="#">트렌치코트</a></li>
-                            <li><a class="dropdown-item" href="#">코트</a></li>
+                            <li><span class="dropdown-item-text">���고��</span></li>
+                            <li><a class="dropdown-item" href="#">媛���嫄�</a></li>
+                            <li><a class="dropdown-item" href="#">�몃��移�肄���</a></li>
+                            <li><a class="dropdown-item" href="#">肄���</a></li>
                           </div>
                           <div class="dropdown-in">
                             <button type="button" class="btn-close" aria-label="Close"></button>
@@ -384,7 +384,7 @@
                   </div>
                   <a class="navbar-brand"></a>
                   <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="키워드로 검색 예)히트택" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="�ㅼ����濡� 寃��� ��)���명��" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
                 </div>
@@ -444,13 +444,13 @@
     </div> -->
     <!--Main-top End-->
     
-    <!--상품 헤드 information입니다-->
+    <!--���� �ㅻ�� information������-->
     <div class="main-top-information">
       <div class="new-main">
         <div class="top-width">
           <h2>SKIRTS</h2>
           <h4>"If you wear a short enough skirt, the party will come to you."
-            —Dorothy Parker</h4>
+            ��Dorothy Parker</h4>
         </div>
         <div>
           
@@ -470,13 +470,14 @@
         <h3>Beatiful Women Skirts</h3>
       </div>
 
-      <!--new-main으로 안의 div구성-->
+      <!--new-main�쇰� ���� div援ъ��-->
       
       <div class="new-main-products">
-        <!--products라는 div로 물건 하나 넣은 것 구성-->
+        <!--products�쇰�� div濡� 臾쇨굔 ���� �ｌ�� 寃� 援ъ��-->
         <div class="products">
           <div class="content-img">
-            <!--한번 더 감싸서 모양을 유지합니다-->
+            <!--��踰� �� 媛��몄�� 紐⑥���� ��吏��⑸����-->
+            
             <a href="#">
               <div class="content-wrap-img">
               
@@ -680,34 +681,34 @@
     </div>
     <!--Footer End-->
 
-    <!-- 나중에 JS파일을 따로 뺍니다 -->
+    <!-- ��以��� JS���쇱�� �곕� 類����� -->
 <script>
   const img = document.getElementById('img');
-  // 올리면 변하는 사진
+  // �щ━硫� 蹂����� �ъ�
   img.addEventListener('mouseover', (event)=> {
     img.src="https://images.unsplash.com/photo-1583846717393-dc2412c95ed7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80";
   });
-  // 원래 사진
+  // ���� �ъ�
   img.addEventListener('mouseout', (event) => {
     img.src="https://images.unsplash.com/photo-1583846783214-7229a91b20ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80";
   });
   
   const img1 = document.getElementById('img1');
-  // 올리면 변하는 사진
+  // �щ━硫� 蹂����� �ъ�
   img1.addEventListener('mouseover', (event)=> {
     img1.src="https://images.unsplash.com/photo-1552027933-f034ba955d49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80";
   });
-  // 원래 사진
+  // ���� �ъ�
   img1.addEventListener('mouseout', (event) => {
     img1.src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80";
   });
 
   const img2 = document.getElementById('img2');
-  // 올리면 변하는 사진
+  // �щ━硫� 蹂����� �ъ�
   img2.addEventListener('mouseover', (event)=> {
     img2.src="https://images.unsplash.com/photo-1561932850-4b65ce092609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80";
   });
-  // 원래 사진
+  // ���� �ъ�
   img2.addEventListener('mouseout', (event) => {
     img2.src="https://images.unsplash.com/photo-1561932850-f13404855e53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=313&q=80";
   });

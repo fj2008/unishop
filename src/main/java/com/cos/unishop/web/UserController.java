@@ -149,7 +149,7 @@ public class UserController {
         
         //문자메시지 보내는 함수 
         //안쓸때는 돈나가니까 주석처리해서 테스트할것
-//        CoolSms.certifiedPhoneNumber(phoneNumber, numStr);
+         //CoolSms.certifiedPhoneNumber(phoneNumber, numStr);
         
        
         session.setAttribute("smsNumber", numStr);
