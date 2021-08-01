@@ -19,7 +19,7 @@
               </button>
               <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">Overview</a></li>
+                  <li><a href="/admin/main" class="link-dark rounded">Overview</a></li>
                   <li><a href="/admin/productRegister" class="link-dark rounded">New</a></li>
                   <li><a href="#" class="link-dark rounded">Delete</a></li>
                   <li><a href="#" class="link-dark rounded">Reports</a></li>
@@ -45,7 +45,7 @@
               </button>
               <div class="collapse" id="orders-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">New</a></li>
+                  <li><a href="/admin/userLog" class="link-dark rounded">New</a></li>
                   <li><a href="#" class="link-dark rounded">Processed</a></li>
                   <li><a href="#" class="link-dark rounded">Shipped</a></li>
                   <li><a href="#" class="link-dark rounded">Returned</a></li>

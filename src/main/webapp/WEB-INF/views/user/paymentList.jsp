@@ -1,4 +1,4 @@
-<%@ include file="../layout/header.jsp"%>
+<%@ include file="../layout/header.jsp" %>
 
  <main>
     <!--side bar-->
@@ -68,8 +68,8 @@
 
     <!--컨텐츠 영역 section-->
       <section class="section">
-        <div class="title">
-          <h2>Shopping bucket</h2>
+        <div>
+          <h2>Payment list</h2>
           <!-- <hr/> -->
         </div>
 
@@ -78,7 +78,7 @@
         <div>
           <!-- <h4>내가 쓴 상품평</4> -->
         </div>
-        <!-- 장바구니 -->
+        <!-- 고객 상품평 -->
         <section class="bucket-box">
           <!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
           <!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
@@ -115,14 +115,14 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col"></th>
+                <th scope="col">구매 일자</th>
                 <th class="th-align" scope="col">
                   상품정보
                 </th>
                 <th scope="col">판매가</th>
                 <th scope="col">수량</th>
                 <th scope="col">합계</th>
-                <th scope="col">삭제</th>
+                <th scope="col"></th>
                 
               </tr>
             </thead>
@@ -132,15 +132,21 @@
                 <!-- th, for문으로 돌립니다 -->
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
+                  <!-- 여기에 EL로 구매일자 넣습니다 -->
+                  
+
+
+
+
                   <!-- 체크박스 -->
-                  <div class="info-align-box">
+                  <!-- <div class="info-align-box">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
                       
                       </label>
                     </div>
-                  </div>
+                  </div> -->
                 </th>
 
 
@@ -168,9 +174,9 @@
                     </div>
                     <!-- 상품 페이지 버튼 -->
                     <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-                    <div class="product-button">
-                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
-                    </div>
+                    <!-- <div class="product-button"> -->
+                      <!-- <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>    -->
+                    <!-- </div> -->
                   </div>
 
                 </td>
@@ -195,10 +201,10 @@
                           <input class="num-wrap" value="2" readonly>
                         </div>
                         
-                        <div class="up-and-down">
+                        <!-- <div class="up-and-down">
                           <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
                           <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
-                        </div>
+                        </div> -->
                       
                     </div>
                   </td>
@@ -212,14 +218,14 @@
                       
                     </div>
                   </td>
-                  <td>
+                  <!-- <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
                         삭제
 
                       </button>
                     </div>
-                  </td>
+                  </td> -->
 
                 </div>
               </tr>
@@ -234,12 +240,12 @@
                 <th scope="row">
                   <!-- 체크박스 -->
                   <div class="info-align-box">
-                    <div class="form-check">
+                    <!-- <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
                       
                       </label>
-                    </div>
+                    </div> -->
                   </div>
                 </th>
 
@@ -268,9 +274,9 @@
                     </div>
                     <!-- 상품 페이지 버튼 -->
                     <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-                    <div class="product-button">
+                    <!-- <div class="product-button">
                       <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
-                    </div>
+                    </div> -->
                   </div>
 
                 </td>
@@ -295,10 +301,10 @@
                           <input class="num-wrap" value="2" readonly>
                         </div>
                         
-                        <div class="up-and-down">
+                        <!-- <div class="up-and-down">
                           <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
                           <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
-                        </div>
+                        </div> -->
                       
                     </div>
                   </td>
@@ -313,12 +319,12 @@
                     </div>
                   </td>
                   <td>
-                    <div class="info-align-box">
+                    <!-- <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
                         삭제
 
                       </button>
-                    </div>
+                    </div> -->
                   </td>
 
                 </div>
@@ -333,12 +339,12 @@
                 <th scope="row">
                   <!-- 체크박스 -->
                   <div class="info-align-box">
-                    <div class="form-check">
+                    <!-- <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
                       
                       </label>
-                    </div>
+                    </div> -->
                   </div>
                 </th>
 
@@ -367,9 +373,9 @@
                     </div>
                     <!-- 상품 페이지 버튼 -->
                     <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
-                    <div class="product-button">
+                    <!-- <div class="product-button">
                       <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
-                    </div>
+                    </div> -->
                   </div>
 
                 </td>
@@ -393,10 +399,10 @@
                           <input class="num-wrap" value="2" readonly>
                         </div>
                         
-                        <div class="up-and-down">
+                        <!-- <div class="up-and-down">
                           <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
                           <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
-                        </div>
+                        </div> -->
                       
                     </div>
                   </td>
@@ -411,12 +417,12 @@
                     </div>
                   </td>
                   <td>
-                    <div class="info-align-box">
+                    <!-- <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
                         삭제
 
                       </button>
-                    </div>
+                    </div> -->
                   </td>
 
                 </div>
@@ -428,81 +434,7 @@
               
               <!-- 구버전 -->
               <!-- 한줄 시작 -->
-              <tr>
-                <!-- th, for문으로 돌립니다 -->
-                <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
-                <th scope="row">
-                  <!-- 체크박스 -->
-                  <div class="info-align-box">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                      
-                      </label>
-                    </div>
-                  </div>
-                </th>
-
-
-
-                <!-- 상품정보 -->
-                <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
-                <td>
-                  <div class="product-info-box">
-                    <div class="minibox-img">
-                      <!-- 이미지 -->
-                      <img id="img1" src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" class="rounded float" alt="...">
-                    </div>
-
-                    <!-- 제품 이름 -->
-                    <div class="product-inforamtion" style="font-weight: 800;">
-                      white skirts
-                    </div>
-
-                    <!-- 사이즈 추가 -->
-                    <!-- 사이즈 컴포넌트 추가 -->
-                    <div class="product-size">
-
-                      size
-                    </div>
-                  </div>
-
-                </td>
-                
-                
-                
-                <div class="info-align">
-                  <!-- 가격 -->
-                  <td>
-                    <div class="info-align-box">
-                      23.99$
-                    </div>
-                  </td>
-                  <!-- 수량 -->
-                  <!-- 수량 컴포넌트 추가 -->
-                  <td>
-                    <div class="info-align-box">
-                      2
-                    </div>
-                  </td>
-                  <!-- 합계 -->
-                  <!-- 계산되어서 되는 합계 추가 -->
-                  <td>
-                    <div class="info-align-box">
-                      47.98$
-                    </div>
-                  </td>
-                  <td>
-                    <div class="info-align-box">
-                      <button type="button" class="btn btn-danger">
-                        삭제
-
-                      </button>
-                    </div>
-                  </td>
-
-                </div>
-              </tr>
+              
               <!-- 한줄 종료 -->
 
             </tbody>
@@ -510,10 +442,10 @@
 
           <!-- 테이블 end  -->
 
-          <div class="checkbox-area">
+          <!-- <div class="checkbox-area"> -->
             <!-- 체크박스 -->
-            <div class="info-align-box">
-              <div class="form-check">
+            <!-- <div class="info-align-box"> -->
+              <!-- <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="selectall" id="flexCheckDefault" onclick="selectAll(this)">
                 <label class="form-check-label" for="flexCheckDefault">
                   <div>전체선택</div>
@@ -522,31 +454,24 @@
               <button type="button" class="btn btn-danger">
                 삭제
 
-              </button>
-            </div>
+              </button> -->
+            <!-- </div> -->
             
-          </div>
+          <!-- </div> -->
 
 
         </section>
-        <!-- bucket end -->
-
-        <!-- 버튼 div -->
-        <!-- 모두 선택 버튼 영역 -->
+        <!-- comments box end -->
 
 
-        <!-- 모두 삭제 버튼 영역 -->
-        <div class="delete-button">
-          <!-- <button type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 삭제</button>
-         -->
-        </div>
-        <!-- <div class="delete-button">
-          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 선택</button>
-        </div> -->
+        
+      </section>
 
-
-      </section>   
+    
+    
+    
+    
     
     </main>
 
-<%@ include file="../layout/footer.jsp"%>
+<%@ include file="../layout/footer.jsp" %>

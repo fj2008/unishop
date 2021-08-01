@@ -48,7 +48,7 @@
 						aria-expanded="false">Orders</button>
 					<div class="collapse" id="orders-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">New</a></li>
+							<li><a href="/admin/userLog" class="link-dark rounded">New</a></li>
 							<li><a href="#" class="link-dark rounded">Processed</a></li>
 							<li><a href="#" class="link-dark rounded">Shipped</a></li>
 							<li><a href="#" class="link-dark rounded">Returned</a></li>

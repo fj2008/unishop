@@ -19,10 +19,18 @@ public class MyPageController {
 	public String CommentsManagement() {
 		return"user/commentsManagement";
 	}
+	//장바구니로 가는 컨트롤러
+	//지금은 페이지만 연결해놓은거
+	//나중에 모델에 담에서뿌려야함 ㅇㅋ?
 	
 	@GetMapping("/bucket")
 	public String myPage() {
 		return"user/bucket";
+	}
+	
+	@GetMapping("/paymentList")
+	public String paymentList() {
+		return "user/paymentList";
 	}
 	
 }

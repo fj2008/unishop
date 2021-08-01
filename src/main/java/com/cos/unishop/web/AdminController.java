@@ -39,6 +39,12 @@ public class AdminController {
 		return "admin/adminProductRegister";
 	}
 
+	//관리자 회원구메로그 페이지 ㄱㄱ
+	@GetMapping("/admin/userLog")
+	public String adminUserLog() {
+		return "admin/adminUserLog";
+	}
+	
 	// 관리자 상품업데이트컨트롤러
 	@PostMapping("/admin/update")
 	public String productUpdate(PostDto postDto) {

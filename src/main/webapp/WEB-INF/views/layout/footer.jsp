@@ -3,6 +3,13 @@
 	<p>Footer</p>
 </div>
 <script>
+		
+		//장바구니
+		function goBucket() {
+			alert("장바구니로 이동 하시겠습니까?");
+			location.href = "/bucket";
+		}
+
 		function logout() {
 			alert("로그아웃하시겠습니까?");
 			location.href = "/auth/loginForm";
