@@ -7,6 +7,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'unishop'@'%';
 CREATE database unishopdb;
 ```
 
+###컴퓨터 옮겼을때 수정해야할 코드
+```
+utils에 myPath에 저장될 이미지경로(이거때문에 1시간날림.....)
+UserController에서 쿨sms보내는 코드 주석확인
+```
+
+
 ###추가 의존성
 ```xml
 <dependency>
