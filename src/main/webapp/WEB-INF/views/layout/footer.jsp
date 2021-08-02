@@ -3,6 +3,48 @@
 	<p>Footer</p>
 </div>
 <script>
+
+
+function goPaymentAPI(){
+	event.preventDefault()
+
+	
+	 let IMP = window.IMP;
+    IMP.init("imp55496891");
+    IMP.request_pay({
+        pg: "html5_inicis",//이니시스 웹표준 결제창
+        pay_method: "card",//결제방법
+        merchant_uid: "ORD20180131-000001",//주문번호
+        name: "청바지",//상품명
+        amount: 1,//가격
+        buyer_email: "ssar@gmail.com",//이메일
+        buyer_name: "이호겸",//이름
+        buyer_tel: "010-4242-4242",//연락처
+        buyer_addr: "서울특별시 강남구 신사동",//주소
+        buyer_postcode: "01181"//상품코드
+    }, function (rsp) {
+    	 if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+    	      // jQuery로 HTTP 요청
+    	      jQuery.ajax({
+    	          url: "/payment", //해당 uri에 파라미터값전달
+    	          method: "POST",
+    	          headers: { "Content-Type": "application/json" },
+    	          data: {
+    	              imp_uid: rsp.imp_uid,
+    	              merchant_uid: rsp.merchant_uid
+    	          }
+    	      }).done(function (data) {
+    	        // 결제 성공했을때 로직
+    	        
+    	      })
+    	    } else {
+    	      alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+    	    }
+    	  });
+}
+
+
+
 		// DB에서 판매가를 변수로 담아와서 수량과 합계가 변화가 됩니다.
 		function selectAll(selectAll)  {
 		    const checkboxes 

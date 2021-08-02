@@ -1,5 +1,44 @@
 # unishop ~
 
+###이니시스 결제 api 호출 방법
+```
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+jQuery넣어주기!
+
+ let IMP = window.IMP;
+        IMP.init("imp55496891");
+        IMP.request_pay({
+            pg: "html5_inicis",//이니시스 웹표준 결제창
+            pay_method: "card",//결제방법
+            merchant_uid: "ORD20180131-0000011",//주문번호
+            name: "청바지",//상품명
+            amount: 19000,//가격
+            buyer_email: "ssar@gmail.com",//이메일
+            buyer_name: "이호겸",//이름
+            buyer_tel: "010-4242-4242",//연락처
+            buyer_addr: "서울특별시 강남구 신사동",//주소
+            buyer_postcode: "01181"//상품코드
+        }, function (rsp) {
+            console.log(rsp);
+            if (rsp.success) {
+                let msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;//아임포트 거래고유번호
+                msg += '상점 거래ID : ' + rsp.merchant_uid;//주문번호
+                msg += '결제 금액 : ' + rsp.paid_amount;//결제금액
+                msg += '카드 승인번호 : ' + rsp.apply_num;
+            } else {
+                let msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+            }
+            alert(msg);
+        });
+        
+추가적인 파라미터값은 api문서 확인해서 추가할것!
+```
+
 ###데이터베이스 생성 방법
 ```sql
 CREATE USER 'unishop'@'%' IDENTIFIED BY 'korea1234';
