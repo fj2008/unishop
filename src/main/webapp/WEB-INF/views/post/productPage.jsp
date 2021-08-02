@@ -28,15 +28,15 @@
 		<h3>Beatiful Women Skirts</h3>
 	</div>
 
-	<!--new-main占쎌�곤옙 占쏙옙占쏙옙 div�닌�占쏙옙-->
+
 
 	<div class="new-main-products">
-		<!--products占쎌�곤옙占� div嚥∽옙 �얠�④� 占쏙옙占쏙옙 占쏙�占쏙옙 野�占� �닌�占쏙옙-->
+	
 		
-	<c:forEach var="post" items="${postEntity}">
+	<c:forEach var="post" items="${postsEntity}">
 		<div class="products">
 			<div class="content-img">
-				<!--占쏙옙甕곤옙 占쏙옙 揶�占쏙옙紐�占쏙옙 筌��ο옙占쏙옙占� 占쏙옙筌�占쏙옙�몌옙占쏙옙占�-->
+				
 
 				<a href="/post/${post.id}">
 					<div class="content-wrap-img">

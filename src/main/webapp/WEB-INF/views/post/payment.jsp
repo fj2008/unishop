@@ -1,77 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="../layout/header.jsp" %>
-
- <main>
-    <!--side bar-->
-      <div class="sidebars">
-        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-          <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-            <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-            <span class="fs-5 fw-semibold">My page</span>
-          </a>
-          <ul class="list-unstyled ps-0">
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                Service Information
-              </button>
-              <div class="collapse show" id="home-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="/CommentsManagement" class="link-dark rounded">Comments management</a></li>
-                  <li><a href="/bucket" class="link-dark rounded">Shopping bucket</a></li>
-                  <li><a href="/paymentList" class="link-dark rounded">Payment list</a></li>
-                </ul>
-              </div>
-            </li>
-            <!-- <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                Dashboard
-              </button>
-              <div class="collapse" id="dashboard-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">Overview</a></li>
-                  <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                  <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                  <li><a href="#" class="link-dark rounded">Annually</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                Orders
-              </button>
-              <div class="collapse" id="orders-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">New</a></li>
-                  <li><a href="#" class="link-dark rounded">Processed</a></li>
-                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                  <li><a href="#" class="link-dark rounded">Returned</a></li>
-                </ul>
-              </div>
-            </li> -->
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                Account
-              </button>
-              <div class="collapse" id="account-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-                  <li><a href="#" class="link-dark rounded">Profile modification</a></li>
-                  <li><a href="#" class="link-dark rounded">Settings</a></li>
-                  <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <!--side bar End-->
+ <%@ include file="../layout/header.jsp" %>
+ 
+ <main class="main-box">
+    
 
     <!--컨텐츠 영역 section-->
       <section class="section">
-        <div>
-          <h2>Payment list</h2>
+        <div class="title">
+          <h2>Payment Page</h2>
           <!-- <hr/> -->
         </div>
 
@@ -80,7 +15,7 @@
         <div>
           <!-- <h4>내가 쓴 상품평</4> -->
         </div>
-        <!-- 고객 상품평 -->
+        <!-- 장바구니 -->
         <section class="bucket-box">
           <!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
           <!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
@@ -117,7 +52,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">구매 일자</th>
+                <th scope="col"></th>
                 <th class="th-align" scope="col">
                   상품정보
                 </th>
@@ -134,12 +69,6 @@
                 <!-- th, for문으로 돌립니다 -->
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
-                  <!-- 여기에 EL로 구매일자 넣습니다 -->
-                  
-
-
-
-
                   <!-- 체크박스 -->
                   <!-- <div class="info-align-box">
                     <div class="form-check">
@@ -463,17 +392,198 @@
 
 
         </section>
-        <!-- comments box end -->
+        <!-- bucket end -->
+
+        <!-- 버튼 div -->
+        <!-- 모두 선택 버튼 영역 -->
 
 
-        
+
+        <!-- 모두 삭제 버튼 영역 -->
+        <div class="delete-button">
+          <!-- <button type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 삭제</button>
+         -->
+        </div>
+        <!-- <div class="delete-button">
+          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 선택</button>
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </section>
 
-    
-    
+    <!-- 결제 박스 영역입니다 -->
+      <section class="payment-box">
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Billing address</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <div class="invalid-feedback">
+                    Your username is required.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+              </div>
+  
+              <div class="col-md-5">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+  
+              <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select class="form-select" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+  
+              <div class="col-md-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required>
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+            </div>
+  
+            <hr class="my-4">
+  
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="same-address">
+              <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+            </div>
+  
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="save-info">
+              <label class="form-check-label" for="save-info">Save this information for next time</label>
+            </div>
+  
+            <hr class="my-4">
+  
+            <h4 class="mb-3">Payment</h4>
+  
+            <div class="my-3">
+              <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="debit">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+            </div>
+  
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Credit card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+  
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+  
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+  
+            <hr class="my-4">
+  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >Continue to checkout</button>
+          </form>
+        </div>
+      </section>
     
     
     
     </main>
-
-<%@ include file="../layout/footer.jsp" %>
+    
+    <%@ include file="../layout/footer.jsp"%>

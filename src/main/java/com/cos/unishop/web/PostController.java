@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.unishop.domain.post.Post;
 import com.cos.unishop.domain.post.PostRepository;
@@ -32,7 +33,9 @@ public class PostController {
 	    //상품 페이지로 이동하는 컨트롤러
 	    @GetMapping("/post/productPage")
 	    public String productPage(Model model) {
-	    	model.addAttribute("postEntity",postRepository.findAll()); 
+	    	
+	    	
+	    	model.addAttribute("postsEntity", postRepository.findAll());
 	    	return "post/productPage";
 	    }
 	    
@@ -42,6 +45,15 @@ public class PostController {
 	    	Post postEntity = postRepository.findById(id).get();
 	    	model.addAttribute("postEntity",postEntity);
 	    	return "post/detail";
+	    }
+	    
+	    //결제화면으로 이동하는 컨트롤러
+	    @GetMapping("post/payment/{id}")
+	    public String paymentPage(@PathVariable int id, Model model) {
+	    	Post postEntity = postRepository.findById(id).get();
+	    	model.addAttribute("postEntity", postEntity);
+	    	
+	    	return "post/payment";
 	    }
 	    
 	

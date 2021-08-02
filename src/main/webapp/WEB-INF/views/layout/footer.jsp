@@ -3,6 +3,25 @@
 	<p>Footer</p>
 </div>
 <script>
+		// DB에서 판매가를 변수로 담아와서 수량과 합계가 변화가 됩니다.
+		function selectAll(selectAll)  {
+		    const checkboxes 
+		      = document.querySelectorAll('input[type="checkbox"]');
+		    
+		    checkboxes.forEach((checkbox) => {
+		      checkbox.checked = selectAll.checked
+		    })
+		  }
+		
+	
+
+
+
+		//결제 페이지
+		function goPayment(){
+			alert("결제 페이지로 이동하시겠습니까?")
+			location.href = "/post/payment/${postEntity.id}";
+		}
 		
 		//장바구니
 		function goBucket() {
@@ -14,6 +33,12 @@
 			alert("로그아웃하시겠습니까?");
 			location.href = "/auth/loginForm";
 		}
+		
+		function goLoginCheck(){
+			alert("로그인을 하셔야 이용하실수 있는 페이지 입니다");
+			location.href = "/auth/loginForm";
+		}
+		
 		
 		function goLogin(){
 			location.href = "/auth/loginForm";

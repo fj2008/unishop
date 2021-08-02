@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@ include file="../layout/header.jsp"%>
 
 
@@ -19,15 +22,31 @@
             
           </section>
 
+
           <section>
+          
+          <c:choose>
+          	<c:when test="${empty sessionScope.principal}">
             <div class="button-group">
               <div class="button-wrap">
-                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >Buy</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goLoginCheck()">Buy</button>
+              </div>
+              <div class="button-wrap">
+                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goLoginCheck()" >Input bucket</button>
+              </div>
+            </div>
+            </c:when>
+            <c:otherwise>
+            <div class="button-group">
+              <div class="button-wrap">
+                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goPayment()">Buy</button>
               </div>
               <div class="button-wrap">
                 <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goBucket()" >Input bucket</button>
               </div>
             </div>
+            </c:otherwise>
+            </c:choose>
           </section>
         </section>
         
