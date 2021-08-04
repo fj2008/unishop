@@ -19,7 +19,7 @@ console.log(productname);
     IMP.request_pay({
         pg: "html5_inicis",//이니시스 웹표준 결제창
         pay_method: "card",//결제방법
-        merchant_uid: "5",//주문번호
+        merchant_uid: "10",//주문번호
         name: productname,//상품명
         amount: price,//가격
         buyer_email: email,//이메일
@@ -28,10 +28,10 @@ console.log(productname);
 //         buyer_addr: "서울특별시 강남구 신사동",//주소
         buyer_postcode: id//상품코드
     }, async function (rsp) {
-        console.log(rsp);
+//         console.log(rsp);
         if (rsp.success) {
         	alert("결제가 완료되었습니다.");
-        	
+        	console.log(rsp);
         	let response =await fetch("/payment",{
         		method:"post",
         		body:JSON.stringify(rsp),
@@ -42,6 +42,9 @@ console.log(productname);
         	
         	let parseResponse =await response.text();
         	console.log(parseResponse);
+        	if(parseResponse === "ok"){
+        		location.href="/paymentList";
+        	}
         	
         	
 //             msg += '고유ID : ' + rsp.imp_uid;//아임포트 거래고유번호

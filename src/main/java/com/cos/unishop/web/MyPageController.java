@@ -1,7 +1,14 @@
 package com.cos.unishop.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.cos.unishop.domain.payment.PayMentRepository;
+import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -9,6 +16,11 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class MyPageController {
 
+	private final PostRepository postRepository;
+	private final UserRepository userRepository;
+	private final PayMentRepository paymetMentRepository;
+	private final HttpSession session;
+	
 	//마이페이지로 가는 컨트롤러
 	@GetMapping("/myPage")
 	public String bucket() {
@@ -28,8 +40,11 @@ public class MyPageController {
 		return"user/bucket";
 	}
 	
+	//구매목록으로 가는 컨트롤러
 	@GetMapping("/paymentList")
-	public String paymentList() {
+	public String paymentList(Model model) {
+		
+		
 		return "user/paymentList";
 	}
 	
