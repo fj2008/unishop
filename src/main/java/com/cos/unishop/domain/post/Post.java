@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.cos.unishop.Sex;
+import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.user.User;
 
 import lombok.Data;
@@ -39,4 +40,7 @@ public class Post {
 	@ManyToOne
 	private User user; 
 	
+	@JoinColumn(name ="post_id")
+	@ManyToOne
+	private Payment payment;
 }

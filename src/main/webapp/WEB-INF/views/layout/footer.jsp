@@ -5,8 +5,9 @@
 <script>
 
 
-function goPaymentAPI(){
-	event.preventDefault()
+function goPaymentAPI(name){
+	console.log(name);
+	event.preventDefault();
 
 	
 	 let IMP = window.IMP;
@@ -14,38 +15,37 @@ function goPaymentAPI(){
     IMP.request_pay({
         pg: "html5_inicis",//이니시스 웹표준 결제창
         pay_method: "card",//결제방법
-        merchant_uid: "ORD20180131-000001",//주문번호
+        merchant_uid: "ORD20180131-0000013",//주문번호
         name: "청바지",//상품명
-        amount: 1,//가격
+        amount: 19000,//가격
         buyer_email: "ssar@gmail.com",//이메일
         buyer_name: "이호겸",//이름
         buyer_tel: "010-4242-4242",//연락처
         buyer_addr: "서울특별시 강남구 신사동",//주소
         buyer_postcode: "01181"//상품코드
     }, function (rsp) {
-    	 if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-    	      // jQuery로 HTTP 요청
-    	      jQuery.ajax({
-    	          url: "/payment", //해당 uri에 파라미터값전달
-    	          method: "POST",
-    	          headers: { "Content-Type": "application/json" },
-    	          data: {
-    	              imp_uid: rsp.imp_uid,
-    	              merchant_uid: rsp.merchant_uid
-    	          }
-    	      }).done(function (data) {
-    	        // 결제 성공했을때 로직
-    	        
-    	      })
-    	    } else {
-    	      alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
-    	    }
-    	  });
+        console.log(rsp);
+        if (rsp.success) {
+        	
+            let msg = '결제가 완료되었습니다.';
+            msg += '고유ID : ' + rsp.imp_uid;//아임포트 거래고유번호
+            msg += '상점 거래ID : ' + rsp.merchant_uid;//주문번호
+            msg += '결제 금액 : ' + rsp.paid_amount;//결제금액
+            msg += '카드 승인번호 : ' + rsp.apply_num;
+            
+            fetch()
+        } else {
+            let msg = '결제에 실패하였습니다.';
+            msg += '에러내용 : ' + rsp.error_msg;
+        }
+        alert(msg);
+    });
+
 }
 
 
 
-		// DB에서 판매가를 변수로 담아와서 수량과 합계가 변화가 됩니다.
+		// DBìì íë§¤ê°ë¥¼ ë³ìë¡ ë´ììì ìëê³¼ í©ê³ê° ë³íê° ë©ëë¤.
 		function selectAll(selectAll)  {
 		    const checkboxes 
 		      = document.querySelectorAll('input[type="checkbox"]');
@@ -59,25 +59,25 @@ function goPaymentAPI(){
 
 
 
-		//결제 페이지
+		//ê²°ì  íì´ì§
 		function goPayment(){
-			alert("결제 페이지로 이동하시겠습니까?")
+			alert("ê²°ì  íì´ì§ë¡ ì´ëíìê² ìµëê¹?")
 			location.href = "/post/payment/${postEntity.id}";
 		}
 		
-		//장바구니
+		//ì¥ë°êµ¬ë
 		function goBucket() {
-			alert("장바구니로 이동 하시겠습니까?");
+			alert("ì¥ë°êµ¬ëë¡ ì´ë íìê² ìµëê¹?");
 			location.href = "/bucket";
 		}
 
 		function logout() {
-			alert("로그아웃하시겠습니까?");
+			alert("ë¡ê·¸ììíìê² ìµëê¹Â?");
 			location.href = "/auth/loginForm";
 		}
 		
 		function goLoginCheck(){
-			alert("로그인을 하셔야 이용하실수 있는 페이지 입니다");
+			alert("ë¡ê·¸ì¸ì íìì¼ ì´ì©íì¤ì ìë íì´ì§ ìëë¤");
 			location.href = "/auth/loginForm";
 		}
 		
@@ -87,7 +87,7 @@ function goPaymentAPI(){
 		}
 		 
 		async function acceptNumber(){
-			alert("주소찾기");
+			alert("ì£¼ìì°¾ê¸°");
 			
 			let phoneNumber = document.querySelector("#textsms").value;
 			alert(phoneNumber);
@@ -141,7 +141,7 @@ function goPaymentAPI(){
 			    })
 			  }
 		  
-		// DBìì íë§¤ê°ë¥¼ ë³ìë¡ ë´ììì ìëê³¼ í©ê³ê° ë³íê° ë©ëë¤.
+		// DBÃ¬ÂÂÃ¬ÂÂ Ã­ÂÂÃ«Â§Â¤ÃªÂ°ÂÃ«Â¥Â¼ Ã«Â³ÂÃ¬ÂÂÃ«Â¡Â Ã«ÂÂ´Ã¬ÂÂÃ¬ÂÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂÃªÂ³Â¼ Ã­ÂÂ©ÃªÂ³ÂÃªÂ°Â Ã«Â³ÂÃ­ÂÂÃªÂ°Â Ã«ÂÂ©Ã«ÂÂÃ«ÂÂ¤.
 
 		
 

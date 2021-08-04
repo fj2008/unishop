@@ -87,20 +87,20 @@
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+											src="/upload/${postEntity.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										white skirts</div>
+										${postEntity.productname}</div>
 
 									<!-- 사이즈 추가 -->
 									<!-- 사이즈 컴포넌트 추가 -->
 									<div class="product-size">
 										size
 										<!-- 여기에 사이즈 EL 표현식 -->
-										<input class="num-wrap" value="M" readonly>
+										<input class="num-wrap" value="${postEntity.size}" readonly>
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
@@ -118,7 +118,7 @@
 								<td>
 									<div class="info-align-box">
 										<!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-										23.99$
+										${postEntity.price}
 									</div>
 								</td>
 								<!-- 수량 -->
@@ -417,12 +417,12 @@
 
 			<!--           form Start -->
 			<form class="needs-validation" novalidate 
-				onsubmit="goPaymentAPI()">
+				onsubmit="goPaymentAPI('${principal.name}')">
 				<div class="row g-3">
 					<div class="col-sm-6">
 						<label for="firstName" class="form-label">name</label> <input
 							type="text" class="form-control" id="firstName" placeholder=""
-							value="" name="name" required>
+							value="${principal.name}" name="name" readonly="readonly" required>
 						<div class="invalid-feedback">Valid first name is required.
 						</div>
 					</div>

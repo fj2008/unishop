@@ -21,19 +21,41 @@ import lombok.Data;
 @Entity
 public class Payment {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	private String name;
-	private String address;
-	
-	
-	@JsonIgnoreProperties({"user"})
+
+	private String apply_num;
+	private String bank_name;
+	private String buyer_addr;
+	private String buyer_email;
+	private String	buyer_name;
+	private String	buyer_postcode;
+	private String	buyer_tel;
+	private String	card_name;
+	private String	card_number;
+	private int	card_quota;
+	private String	currency;
+	private String	custom_data;
+	private String	imp_uid;
+	private String	merchant_uid;
+	private String	name;
+	private int		paid_amount;
+	private int	paid_at;
+	private String pay_method;
+	private String pg_provider;
+	private String pg_tid;
+	private String pg_type;
+	private String receipt_url;
+	private String status;
+
+	@JsonIgnoreProperties({ "user" })
 	@JoinColumn(name = "user_id")
 	@ManyToOne
 	private User user;
 	
+	@JsonIgnoreProperties({"payment"})
+	@OneToMany(mappedBy = "payment",fetch = FetchType.LAZY)
+	private List<Post> posts;
 
 }
