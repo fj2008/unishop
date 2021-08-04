@@ -38,7 +38,7 @@ public class Payment {
 	private String	currency;
 	private String	custom_data;
 	private String	imp_uid;
-	private String	merchant_uid;
+	private String	merchant_uid;//주문번호
 	private String	name;
 	private int		paid_amount;
 	private int	paid_at;
