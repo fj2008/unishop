@@ -43,4 +43,6 @@ public class Post {
 	@JoinColumn(name ="post_id")
 	@ManyToOne
 	private Payment payment;
+	
+
 }

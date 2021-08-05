@@ -1,9 +1,8 @@
 server:
- port: 8001
- servlet:
+  port: 8000
+  servlet:
     encoding:
       charset: UTF-8
-      
 
 spring:
   mvc:
@@ -11,16 +10,13 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
-
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     username: unishop
     password: korea1234
-    url: jdbc:mysql://localhost:3306/unishopdb      
-    
-    
+    url: jdbc:mysql://localhost:3306/unishopdb
+
   jpa:
     hibernate:
       ddl-auto: none #create:, update, none
     show-sql: true
-

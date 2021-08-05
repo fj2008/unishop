@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ include file="../layout/header.jsp"%>
 
  <main>
@@ -68,7 +70,7 @@
       </div>
     <!--side bar End-->
 
-    <!--ì»¨íì¸  ìì­ section-->
+    <!--컨텐츠 영역­ section-->
       <section class="section">
         <div class="title">
           <h2>Shopping bucket</h2>
@@ -78,18 +80,18 @@
         
 
         <div>
-          <!-- <h4>ë´ê° ì´ ìíí</4> -->
+          <!-- <h4>내가 쓴 상품평</4> -->
         </div>
-        <!-- ì¥ë°êµ¬ë -->
+        <!-- 장바구니 -->
         <section class="bucket-box">
-          <!-- ëª¨ë¬ ì¬ì©í´ì ìíí ë°ë¡ íì´ë¸ì ë£ê¸° -->
+          <!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
           <!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
           
          
           <div class="input-comments">
             <!-- Button trigger modal -->
             <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >
-              ìíí ì°ê¸°
+              상품평쓰기
             </button> -->
 
             <!-- Modal -->
@@ -112,29 +114,29 @@
             </div>
           </div> -->
 
-          <!-- ì¥ë°êµ¬ë íì´ë¸ -->
-          <!-- DBìì ê°ì ¸ìì ëì ¸ì¤ -->
+          <!-- 장바구니 테이블 -->
+          <!-- DB에서 가져와서 던져줌 -->
           <table class="table">
             <thead>
               <tr>
                 <th scope="col"></th>
                 <th class="th-align" scope="col">
-                  ìíì ë³´
+                  상품정보
                 </th>
-                <th scope="col">íë§¤ê°</th>
-                <th scope="col">ìë</th>
-                <th scope="col">í©ê³</th>
-                <th scope="col">ì­ì </th>
+                <th scope="col">판매가</th>
+                <th scope="col">수량</th>
+                <th scope="col">합계</th>
+                <th scope="col">삭제</th>
                 
               </tr>
             </thead>
             <tbody>
-              <!-- íì¤ ìì -->  
+              <!-- 한줄 시작 -->  
               <tr>
-                <!-- th, forë¬¸ì¼ë¡ ëë¦½ëë¤ -->
-                <!-- ëì¤ì ì¬ê¸°ì EL ííìì¼ë¡ ë¿ë ¤ì¤ëë¤ -->
+                <!-- th, for문으로 돌립니다 -->
+                <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
-                  <!-- ì²´í¬ë°ì¤ -->
+                  <!-- 체크박스 -->
                   <div class="info-align-box">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -147,31 +149,31 @@
 
 
 
-                <!-- ìíì ë³´ -->
-                <!-- ì¬ê¸°ìì ìí ì´ë¦ì í´ë¦­íë©´ ê·¸ ìíì í´ë¹íë detailì ë¿ë¦¬ë ê¸°ë¥ ì¶ê° -->
+                <!-- 상품정보 -->
+                <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
                   <div class="product-info-box">
                     <div class="minibox-img">
-                      <!-- ì´ë¯¸ì§ -->
+                      <!-- 이미지 -->
                       <img id="img1" src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" class="rounded float" alt="...">
                     </div>
 
-                    <!-- ì í ì´ë¦ -->
+                    <!-- 제품 이름 -->
                     <div class="product-inforamtion" style="font-weight: 800;">
                       white skirts
                     </div>
 
-                    <!-- ì¬ì´ì¦ ì¶ê° -->
-                    <!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
+                    <!-- 사이즈 추가 -->
+                    <!-- 사이즈 컴포넌트 추가 -->
                     <div class="product-size">
                       size
-                      <!-- ì¬ê¸°ì ì¬ì´ì¦ EL ííì -->
+                      <!-- 여기에 사이즈 EL 표현식 -->
                       <input class="num-wrap" value="M" readonly>
                     </div>
-                    <!-- ìí íì´ì§ ë²í¼ -->
-                    <!-- ì¬ê¸°ì DBì°ëí´ì ìí íì´ì§ ì ë³´ë¥¼ ë°ìì ë°ë¡ ê° ì ìê² í©ëë¤ -->
+                    <!-- 상품 페이지 버튼 -->
+                    <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
                     <div class="product-button">
-                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">ìí íì´ì§</button>   
+                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
                     </div>
                   </div>
 
@@ -180,32 +182,32 @@
                 
                 
                 <div class="info-align">
-                  <!-- ê°ê²© -->
+                  <!-- 가격 -->
                   <td>
                     <div class="info-align-box">
-                      <!-- ì¬ê¸°ì ELííìì¼ë¡ ê°ê²©ì ë°ììµëë¤ -->
+                      <!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
                       23.99$
                     </div>
                   </td>
-                  <!-- ìë -->
-                  <!-- ìë ì»´í¬ëí¸ ì¶ê° -->
+                  <!-- 수량 -->
+                  <!-- 수량 컴포넌트 추가 -->
                   <td>
                     <div class="info-align-box">
                       
-                        <!-- ì¬ê¸°ì ìë ë°ì¤ ì¶ê° -->
+                        <!-- 여기에 수량 박스 추가 -->
                         <div>
-                          <input class="num-wrap" value="2" readonly>
+                          <input class="num-wrap" value="1" readonly>
                         </div>
                         
                         <div class="up-and-down">
-                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
-                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                          <input type="image" id="up" src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <input type="image" id="down" img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
                         </div>
                       
                     </div>
                   </td>
-                  <!-- í©ê³ -->
-                  <!-- ê³ì°ëì´ì ëë í©ê³ ì¶ê° -->
+                  <!-- 합계 -->
+                  <!-- 계산되어서 되는 합계 추가 -->
                   <td>
                     <div class="info-align-box">
                       <div>
@@ -217,7 +219,7 @@
                   <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
-                        ì­ì 
+                        삭제
 
                       </button>
                     </div>
@@ -225,16 +227,16 @@
 
                 </div>
               </tr>
-              <!-- íì¤ ì¢ë£ -->
+              <!-- 한줄 종료 -->
 
               
 
-              <!-- íì¤ ìì -->
+              <!-- 한줄 시작 -->
               <tr>
-                <!-- th, forë¬¸ì¼ë¡ ëë¦½ëë¤ -->
-                <!-- ëì¤ì ì¬ê¸°ì EL ííìì¼ë¡ ë¿ë ¤ì¤ëë¤ -->
+                <!-- th, for문으로 돌립니다 -->
+                <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
-                  <!-- ì²´í¬ë°ì¤ -->
+                  <!-- 체크박스 -->
                   <div class="info-align-box">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -247,31 +249,31 @@
 
 
 
-                <!-- ìíì ë³´ -->
-                <!-- ì¬ê¸°ìì ìí ì´ë¦ì í´ë¦­íë©´ ê·¸ ìíì í´ë¹íë detailì ë¿ë¦¬ë ê¸°ë¥ ì¶ê° -->
+                <!-- 상품정보 -->
+                <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
                   <div class="product-info-box">
                     <div class="minibox-img">
-                      <!-- ì´ë¯¸ì§ -->
+                      <!-- 이미지 -->
                       <img id="img1" src="https://images.unsplash.com/photo-1577155848406-b53ebd277c72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="rounded float" alt="...">
                     </div>
 
-                    <!-- ì í ì´ë¦ -->
+                    <!-- 제품 이름 -->
                     <div class="product-inforamtion" style="font-weight: 800;">
                       red checked pattern skirts
                     </div>
 
-                    <!-- ì¬ì´ì¦ ì¶ê° -->
-                    <!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
+                    <!-- 사이즈 추가 -->
+                    <!-- 사이즈 컴포넌트 추가 -->
                     <div class="product-size">
                       size
-                      <!-- ì¬ê¸°ì ì¬ì´ì¦ EL ííì -->
+                      <!-- 여기에 사이즈 EL 표현식 -->
                       <input class="num-wrap" value="M">
                     </div>
-                    <!-- ìí íì´ì§ ë²í¼ -->
-                    <!-- ì¬ê¸°ì DBì°ëí´ì ìí íì´ì§ ì ë³´ë¥¼ ë°ìì ë°ë¡ ê° ì ìê² í©ëë¤ -->
+                    <!-- 상품 페이지 버튼 -->
+                    <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
                     <div class="product-button">
-                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">ìí íì´ì§</button>   
+                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
                     </div>
                   </div>
 
@@ -280,32 +282,32 @@
                 
                 
                 <div class="info-align">
-                  <!-- ê°ê²© -->
+                  <!-- 가격 -->
                   <td>
                     <div class="info-align-box">
-                      <!-- ì¬ê¸°ì ELííìì¼ë¡ ê°ê²©ì ë°ììµëë¤ -->
+                      <!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
                       23.99$
                     </div>
                   </td>
-                  <!-- ìë -->
-                  <!-- ìë ì»´í¬ëí¸ ì¶ê° -->
+                  <!-- 수량 -->
+                  <!-- 수량 컴포넌트 추가 -->
                   <td>
                     <div class="info-align-box">
                       
-                        <!-- ì¬ê¸°ì ìë ë°ì¤ ì¶ê° -->
+                        <!-- 여기에 수량 박스 추가 -->
                         <div>
                           <input class="num-wrap" value="2" readonly>
                         </div>
                         
                         <div class="up-and-down">
-                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
-                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                          <input type="image" id="up" src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <input type="image" id="down" img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
                         </div>
                       
                     </div>
                   </td>
-                  <!-- í©ê³ -->
-                  <!-- ê³ì°ëì´ì ëë í©ê³ ì¶ê° -->
+                  <!-- 합계 -->
+                  <!-- 계산되어서 되는 합계 추가 -->
                   <td>
                     <div class="info-align-box">
                       <div>
@@ -317,7 +319,7 @@
                   <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
-                        ì­ì 
+                        삭제
 
                       </button>
                     </div>
@@ -325,15 +327,15 @@
 
                 </div>
               </tr>
-              <!-- íì¤ ì¢ë£ -->
+              <!-- 한줄 종료 -->
 
 
-              <!-- íì¤ ìì -->
+              <!-- 한줄 시작 -->
               <tr>
-                <!-- th, forë¬¸ì¼ë¡ ëë¦½ëë¤ -->
-                <!-- ëì¤ì ì¬ê¸°ì EL ííìì¼ë¡ ë¿ë ¤ì¤ëë¤ -->
+                <!-- th, for문으로 돌립니다 -->
+                <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
-                  <!-- ì²´í¬ë°ì¤ -->
+                  <!-- 체크박스 -->
                   <div class="info-align-box">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -346,31 +348,31 @@
 
 
 
-                <!-- ìíì ë³´ -->
-                <!-- ì¬ê¸°ìì ìí ì´ë¦ì í´ë¦­íë©´ ê·¸ ìíì í´ë¹íë detailì ë¿ë¦¬ë ê¸°ë¥ ì¶ê° -->
+                <!-- 상품정보 -->
+                <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
                   <div class="product-info-box">
                     <div class="minibox-img">
-                      <!-- ì´ë¯¸ì§ -->
+                      <!-- 이미지 -->
                       <img id="img1" src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" class="rounded float" alt="...">
                     </div>
 
-                    <!-- ì í ì´ë¦ -->
+                    <!-- 제품 이름 -->
                     <div class="product-inforamtion" style="font-weight: 800;">
                       white skirts
                     </div>
 
-                    <!-- ì¬ì´ì¦ ì¶ê° -->
-                    <!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
+                    <!-- 사이즈 추가 -->
+                    <!-- 사이즈 컴포넌트 추가 -->
                     <div class="product-size">
                       size
-                      <!-- ì¬ê¸°ì ì¬ì´ì¦ EL ííì -->
+                      <!-- 여기에 사이즈 EL 표현식 -->
                       <input class="num-wrap" value="M">
                     </div>
-                    <!-- ìí íì´ì§ ë²í¼ -->
-                    <!-- ì¬ê¸°ì DBì°ëí´ì ìí íì´ì§ ì ë³´ë¥¼ ë°ìì ë°ë¡ ê° ì ìê² í©ëë¤ -->
+                    <!-- 상품 페이지 버튼 -->
+                    <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
                     <div class="product-button">
-                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">ìí íì´ì§</button>   
+                      <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">상품 페이지</button>   
                     </div>
                   </div>
 
@@ -379,35 +381,35 @@
                 
                 
                 <div class="info-align">
-                  <!-- ê°ê²© -->
+                  <!-- 가격 -->
                   <td>
                     <div class="info-align-box">
-                      23.99$
+                      <p>${price}원</p>
                     </div>
                   </td>
-                  <!-- ìë -->
-                  <!-- ìë ì»´í¬ëí¸ ì¶ê° -->
+                  <!-- 수량 -->
+                  <!-- 수량 컴포넌트 추가 -->
                   <td>
                     <div class="info-align-box">
                       
-                        <!-- ì¬ê¸°ì ìë ë°ì¤ ì¶ê° -->
+                        <!-- 여기에 수량 박스 추가 -->
                         <div>
-                          <input class="num-wrap" value="2" readonly>
+                          <input class="num-wrap" value="${count}" readonly>
                         </div>
                         
                         <div class="up-and-down">
-                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
-                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
+                          <input type="image" src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
+                          <input type="image" src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
                         </div>
                       
                     </div>
                   </td>
-                  <!-- í©ê³ -->
-                  <!-- ê³ì°ëì´ì ëë í©ê³ ì¶ê° -->
+                  <!-- 합계 -->
+                  <!-- 계산되어서 되는 합계 추가 -->
                   <td>
                     <div class="info-align-box">
                       <div>
-                        <input class="all-count" value="47.98$" readonly>
+                        <input class="all-count" value="${bucketsum}" readonly>
                       </div>
                       
                     </div>
@@ -415,7 +417,7 @@
                   <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
-                        ì­ì 
+                        삭제
 
                       </button>
                     </div>
@@ -423,132 +425,74 @@
 
                 </div>
               </tr>
-              <!-- íì¤ ì¢ë£ -->
+              <!-- 한줄 종료 -->
 
 
 
               
-              <!-- êµ¬ë²ì  -->
-              <!-- íì¤ ìì -->
-              <tr>
-                <!-- th, forë¬¸ì¼ë¡ ëë¦½ëë¤ -->
-                <!-- ëì¤ì ì¬ê¸°ì EL ííìì¼ë¡ ë¿ë ¤ì¤ëë¤ -->
-                <th scope="row">
-                  <!-- ì²´í¬ë°ì¤ -->
-                  <div class="info-align-box">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                      
-                      </label>
-                    </div>
-                  </div>
-                </th>
-
-
-
-                <!-- ìíì ë³´ -->
-                <!-- ì¬ê¸°ìì ìí ì´ë¦ì í´ë¦­íë©´ ê·¸ ìíì í´ë¹íë detailì ë¿ë¦¬ë ê¸°ë¥ ì¶ê° -->
-                <td>
-                  <div class="product-info-box">
-                    <div class="minibox-img">
-                      <!-- ì´ë¯¸ì§ -->
-                      <img id="img1" src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" class="rounded float" alt="...">
-                    </div>
-
-                    <!-- ì í ì´ë¦ -->
-                    <div class="product-inforamtion" style="font-weight: 800;">
-                      white skirts
-                    </div>
-
-                    <!-- ì¬ì´ì¦ ì¶ê° -->
-                    <!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
-                    <div class="product-size">
-
-                      size
-                    </div>
-                  </div>
-
-                </td>
+            
                 
-                
-                
-                <div class="info-align">
-                  <!-- ê°ê²© -->
-                  <td>
-                    <div class="info-align-box">
-                      23.99$
-                    </div>
-                  </td>
-                  <!-- ìë -->
-                  <!-- ìë ì»´í¬ëí¸ ì¶ê° -->
-                  <td>
-                    <div class="info-align-box">
-                      2
-                    </div>
-                  </td>
-                  <!-- í©ê³ -->
-                  <!-- ê³ì°ëì´ì ëë í©ê³ ì¶ê° -->
-                  <td>
-                    <div class="info-align-box">
-                      47.98$
-                    </div>
-                  </td>
-                  <td>
-                    <div class="info-align-box">
-                      <button type="button" class="btn btn-danger">
-                        ì­ì 
-
-                      </button>
-                    </div>
-                  </td>
-
-                </div>
-              </tr>
-              <!-- íì¤ ì¢ë£ -->
 
             </tbody>
           </table>
 
-          <!-- íì´ë¸ end  -->
+          <!-- 테이블 end  -->
 
           <div class="checkbox-area">
-            <!-- ì²´í¬ë°ì¤ -->
+            <!-- 체크박스 -->
+            
             <div class="info-align-box">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="selectall" id="flexCheckDefault" onclick="selectAll(this)">
                 <label class="form-check-label" for="flexCheckDefault">
-                  <div>ì ì²´ì í</div>
                 </label>
               </div>
+              <div>전체선택</div>
               <button type="button" class="btn btn-danger">
-                ì­ì 
+                삭제
 
               </button>
+              <div class="selectall-flex">
+                자바스크립트
+              </div>
             </div>
             
           </div>
 
 
         </section>
+        
         <!-- bucket end -->
 
-        <!-- ë²í¼ div -->
-        <!-- ëª¨ë ì í ë²í¼ ìì­ -->
+        <!-- 버튼 div -->
+        <!-- 모두 선택 버튼 영역 -->
 
 
-        <!-- ëª¨ë ì­ì  ë²í¼ ìì­ -->
+
+        <!-- 모두 삭제 버튼 영역 -->
         <div class="delete-button">
-          <!-- <button type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >ëª¨ë ì­ì </button>
+          <!-- <button type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 삭제</button>
          -->
         </div>
         <!-- <div class="delete-button">
-          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >ëª¨ë ì í</button>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" >모두 선택</button>
         </div> -->
 
 
       </section>   
     
+    <script>
+      function solve() {
+        let st = document.querySelector("post.price");
+        st.addEventListener("price", "solve");
+      }
+      
+
+      
+    </script>
+
     </main>
+
+    
 
 <%@ include file="../layout/footer.jsp"%>
