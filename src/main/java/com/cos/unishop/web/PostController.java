@@ -18,9 +18,9 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PostController {
 
-		private final PostRepository postRepository;
-	   private final UserRepository userRepository;
-	    private final HttpSession session;
+	private final PostRepository postRepository;
+	private final UserRepository userRepository;
+	private final HttpSession session;
 
 	    
 	    // 최초 사이트 유입시에 들어가는 페이지 메인페이지로 가는 컨트롤러 
