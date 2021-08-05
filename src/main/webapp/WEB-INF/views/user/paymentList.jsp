@@ -19,7 +19,7 @@
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                   <li><a href="/CommentsManagement" class="link-dark rounded">Comments management</a></li>
                   <li><a href="/bucket" class="link-dark rounded">Shopping bucket</a></li>
-                  <li><a href="/paymentList" class="link-dark rounded">Payment list</a></li>
+                  <li><a href="/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
                 </ul>
               </div>
             </li>
@@ -129,16 +129,14 @@
               </tr>
             </thead>
             <tbody>
+            
+            <c:forEach var="payment" items="${paymentEntity}">
               <!-- 한줄 시작 -->  
               <tr>
                 <!-- th, for문으로 돌립니다 -->
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
                   <!-- 여기에 EL로 구매일자 넣습니다 -->
-                  
-
-
-
 
                   <!-- 체크박스 -->
                   <!-- <div class="info-align-box">
@@ -152,19 +150,18 @@
                 </th>
 
 
-
                 <!-- 상품정보 -->
                 <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
                   <div class="product-info-box">
                     <div class="minibox-img">
                       <!-- 이미지 -->
-                      <img id="img1" src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" class="rounded float" alt="...">
+                      <img id="img1" src="/upload/22" class="rounded float" alt="...">
                     </div>
 
                     <!-- 제품 이름 -->
                     <div class="product-inforamtion" style="font-weight: 800;">
-                      white skirts
+                      ${payment.name}
                     </div>
 
                     <!-- 사이즈 추가 -->
@@ -172,7 +169,7 @@
                     <div class="product-size">
                       size
                       <!-- 여기에 사이즈 EL 표현식 -->
-                      <input class="num-wrap" value="M" readonly>
+                      <input class="num-wrap" value="22" readonly>
                     </div>
                     <!-- 상품 페이지 버튼 -->
                     <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
@@ -182,15 +179,13 @@
                   </div>
 
                 </td>
-                
-                
-                
+         
                 <div class="info-align">
                   <!-- 가격 -->
                   <td>
                     <div class="info-align-box">
                       <!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-                      23.99$
+                      
                     </div>
                   </td>
                   <!-- 수량 -->
@@ -231,6 +226,8 @@
 
                 </div>
               </tr>
+              </c:forEach>
+              
               <!-- 한줄 종료 -->
 
               

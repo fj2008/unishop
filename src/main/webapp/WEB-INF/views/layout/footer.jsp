@@ -7,11 +7,11 @@
 <script>
 
 
-function goPaymentAPI(productname,price,email,name,phonenumber,id){
+function goPaymentAPI(productname,price,email,name,phonenumber,id,address){
 	
 	event.preventDefault();
 console.log(productname);
-	console.log(price);
+	console.log(address);
 	console.log(email);
 	
 	let IMP = window.IMP;
@@ -19,13 +19,13 @@ console.log(productname);
     IMP.request_pay({
         pg: "html5_inicis",//이니시스 웹표준 결제창
         pay_method: "card",//결제방법
-        merchant_uid: "11",//주문번호
+        merchant_uid: "23",//주문번호
         name: productname,//상품명
         amount: price,//가격
         buyer_email: email,//이메일
         buyer_name: name,//이름
         buyer_tel: phonenumber,//연락처
-//         buyer_addr: "서울특별시 강남구 신사동",//주소
+        buyer_addr: address, //주소
         buyer_postcode: id//상품코드
     }, async function (rsp) {
 //         console.log(rsp);
@@ -43,7 +43,7 @@ console.log(productname);
         	let parseResponse =await response.text();
         	console.log(parseResponse);
         	if(parseResponse === "ok"){
-        		location.href="/paymentList";
+        		location.href="/myPage";
         	}
         	
         	

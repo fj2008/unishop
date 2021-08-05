@@ -1,13 +1,19 @@
 package com.cos.unishop.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.unishop.domain.payment.PayMentRepository;
+import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.user.User;
 import com.cos.unishop.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -41,11 +47,17 @@ public class MyPageController {
 	}
 	
 	//구매목록으로 가는 컨트롤러
-	@GetMapping("/paymentList")
-	public String paymentList(Model model) {
+	@GetMapping("/payment/{id}")
+	public @ResponseBody List<Payment> paymentList(@PathVariable int id, Model model) {
+		
+		User principal =(User) session.getAttribute("principal");
+		int userId = principal.getId();
+		List <Payment> paymentEntity =paymetMentRepository.mfindbyUserId(userId);
+		System.out.println(paymentEntity.size());
+		model.addAttribute("paymentEntity", paymentEntity);
 		
 		
-		return "user/paymentList";
+		return paymentEntity;
+		//return"user/paymentList";
 	}
-	
 }

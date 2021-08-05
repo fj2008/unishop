@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.post.Post;
 import com.cos.unishop.domain.post.PostDto;
 import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.user.User;
 import com.cos.unishop.domain.user.UserRepository;
 import com.cos.unishop.utils.MyPath;
 
@@ -52,6 +54,9 @@ public class AdminController {
 		UUID uuid = UUID.randomUUID();
 		Post post = new Post();
 		
+		User principal =(User) session.getAttribute("principal");
+		
+		Payment payment = new Payment();
 		String imageFileName = uuid + "_"+postDto.getImage().getOriginalFilename();
 		
 		Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
@@ -66,7 +71,10 @@ public class AdminController {
 			post.setSize(postDto.getSize());
 			post.setGender(postDto.getGender());
 			post.setCategory(postDto.getCategory());
+			post.setUser(principal);
 			
+			
+			System.out.println(post.getPayment());
 			postRepository.save(post);
 			
 		}catch(Exception e) {

@@ -418,7 +418,7 @@
 
 			<!--           form Start -->
 			<form class="needs-validation" novalidate 
-				onsubmit="goPaymentAPI('${postEntity.productname}','${postEntity.price}','${principal.email}','${principal.name}','${principal.phonenumber}','${postEntity.id}')">
+				onsubmit="goPaymentAPI('${postEntity.productname}','${postEntity.price}','${principal.email}','${principal.name}','${principal.phonenumber}','${postEntity.id}','${principal.address}')">
 				<div class="row g-3">
 					<div class="col-sm-6">
 						<label for="firstName" class="form-label">name</label> <input
@@ -449,12 +449,12 @@
 							address for shipping updates.</div>
 					</div>
 					<!-- 					ì£¼ìì°¾ê¸° ë²í¼ cssìì  ë¶í -->
-					<input class="btn btn-info" type="button" onClick="goPopup();"
-						value="findaddress" />
+<!-- 					<input class="btn btn-info" type="button" onClick="goPopup();" -->
+<!-- 						value="findaddress" /> -->
 					<div class="col-12">
 						<label for="address" class="form-label">Address</label> <input
 							type="text" class="form-control" id="address" class="address"
-							placeholder="1234 Main St" required>
+							placeholder="1234 Main St" value="${principal.address}" readonly="readonly"  required>
 						<div class="invalid-feedback">Please enter your shipping
 							address.</div>
 					</div>

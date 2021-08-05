@@ -24,7 +24,7 @@
 									management</a></li>
 							<li><a href="/bucket" class="link-dark rounded">Shopping
 									bucket</a></li>
-							<li><a href="#" class="link-dark rounded">Payment list</a></li>
+							<li><a href="/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
 						</ul>
 					</div>
 				</li>

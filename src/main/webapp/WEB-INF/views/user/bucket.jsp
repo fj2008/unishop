@@ -19,7 +19,7 @@
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                   <li><a href="/CommentsManagement" class="link-dark rounded">Comments management</a></li>
                   <li><a href="/bucket" class="link-dark rounded">Shopping bucket</a></li>
-                  <li><a href="/paymentList" class="link-dark rounded">Payment list</a></li>
+                  <li><a href="/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
                 </ul>
               </div>
             </li>
