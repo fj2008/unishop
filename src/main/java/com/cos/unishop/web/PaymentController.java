@@ -28,7 +28,7 @@ public class PaymentController {
 	private final PayMentRepository paymentRepository;
 	private final HttpSession session;
 	
-	//@RequestBody는 HTTP요청의 body 내용을 자바 객체로 매핑 하는 역할을 한다 현섭아 ㅋㅋㅋㅋ
+	//@RequestBody는 HTTP요청의 body 내용을 자바 객체로 매핑 하는 역할을 한다 
 	@PostMapping("/payment")
 	public @ResponseBody String payment(@RequestBody Payment payment, Model model) {
 		
@@ -37,7 +37,9 @@ public class PaymentController {
 		
 		payment.setUser(principal);
 		
+		System.out.println("결제진행됨?");
 		System.out.println(payment.getUser());
+		System.out.println("유저저장완료");
 		System.out.println(payment.getPosts());
 		
 		

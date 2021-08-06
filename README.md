@@ -1,5 +1,46 @@
 # unishop ~
 
+###결제성공시 파라메터
+```
+"id":1,
+"apply_num":"",
+"bank_name":null,
+"buyer_addr":"경상남도 창원시 성산구 중앙대로 151, 123(용호동)",
+"buyer_email":"fj2008@naver.com",
+"buyer_name":"이호겸",
+"buyer_postcode":"1",
+"buyer_tel":"01089628481",
+"card_name":null,
+"card_number":"*********",
+"card_quota":0,
+"currency":"KRW",
+"custom_data":null,
+"imp_uid":"imp_842308363291",
+"merchant_uid":"27",
+"name":"test",
+"paid_amount":1,
+"paid_at":1628214352,
+"pay_method":"point",
+"pg_provider":"html5_inicis",
+"pg_tid":"StdpayCARDINIpayTest20210806104551189406",
+"pg_type":"payment",
+"receipt_url":"https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noTid=StdpayCARDINIpayTest20210806104551189406&noMethod=1",
+"status":"paid",
+"user":{
+"id":1,
+"username":"ssar",
+"password":"1234",
+"email":"fj2008@naver.com",
+"address":"경상남도 창원시 성산구 중앙대로 151, 123(용호동)",
+"phonenumber":"01089628481",
+"name":"이호겸"
+},
+"posts":[
+]
+}
+]
+```
+
 ###이니시스 결제 api 호출 방법
 ```
 <!-- jQuery -->

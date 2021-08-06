@@ -19,7 +19,7 @@ console.log(productname);
     IMP.request_pay({
         pg: "html5_inicis",//이니시스 웹표준 결제창
         pay_method: "card",//결제방법
-        merchant_uid: "23",//주문번호
+        merchant_uid: "27",//주문번호
         name: productname,//상품명
         amount: price,//가격
         buyer_email: email,//이메일
