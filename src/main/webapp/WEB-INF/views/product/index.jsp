@@ -66,11 +66,11 @@
 <!-- 	여기부터 상품진열시작 -->
 <div class="new-main">
 
-<c:forEach var="post" items="${postsEntity}">
+<c:forEach var="products" items="${productsEntity}">
 	<a href="/post/productPage">
 		<div class="index-content-img">
 			<img
-				src="/upload/${post.image}"
+				src="/upload/${products.image}"
 				class="rounded float-start" alt="...">
 
 		</div>

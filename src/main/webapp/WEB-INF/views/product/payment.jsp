@@ -88,20 +88,20 @@
 									<div class="minibox-img">
 										<!-- ì´ë¯¸ì§ -->
 										<img id="img1"
-											src="/upload/${postEntity.image}"
+											src="/upload/${productEntity.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- ì í ì´ë¦ -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										${postEntity.productname}</div>
+										${productEntity.productname}</div>
 
 									<!-- ì¬ì´ì¦ ì¶ê° -->
 									<!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
 									<div class="product-size">
 										size
 										<!-- ì¬ê¸°ì ì¬ì´ì¦ EL ííì -->
-										<input class="num-wrap" value="${postEntity.size}" readonly>
+										<input class="num-wrap" value="${productEntity.size}" readonly>
 									</div>
 									<!-- ìí íì´ì§ ë²í¼ -->
 									<!-- ì¬ê¸°ì DBì°ëí´ì ìí íì´ì§ ì ë³´ë¥¼ ë°ìì ë°ë¡ ê° ì ìê² í©ëë¤ -->
@@ -119,7 +119,7 @@
 								<td>
 									<div class="info-align-box">
 										<!-- ì¬ê¸°ì ELííìì¼ë¡ ê°ê²©ì ë°ììµëë¤ -->
-										${postEntity.price}
+										${productEntity.price}
 									</div>
 								</td>
 								<!-- ìë -->
@@ -418,7 +418,7 @@
 
 			<!--           form Start -->
 			<form class="needs-validation" novalidate 
-				onsubmit="goPaymentAPI('${postEntity.productname}','${postEntity.price}','${principal.email}','${principal.name}','${principal.phonenumber}','${postEntity.id}','${principal.address}')">
+				onsubmit="goPaymentAPI('${productEntity.productname}','${productEntity.price}','${principal.email}','${principal.name}','${principal.phonenumber}','${productEntity.id}','${principal.address}')">
 				<div class="row g-3">
 					<div class="col-sm-6">
 						<label for="firstName" class="form-label">name</label> <input

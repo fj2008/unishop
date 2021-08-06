@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.unishop.domain.payment.Payment;
-import com.cos.unishop.domain.post.Post;
-import com.cos.unishop.domain.post.PostDto;
-import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.product.Product;
+import com.cos.unishop.domain.product.ProductDto;
+import com.cos.unishop.domain.product.ProductRepository;
 import com.cos.unishop.domain.user.User;
 import com.cos.unishop.domain.user.UserRepository;
 import com.cos.unishop.utils.MyPath;
@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class AdminController {
 
-	private final PostRepository postRepository;
+	private final ProductRepository postRepository;
 	private final UserRepository userRepository;
 	private final HttpSession session;
 
@@ -49,10 +49,10 @@ public class AdminController {
 	
 	// 관리자 상품업데이트컨트롤러
 	@PostMapping("/admin/update")
-	public String productUpdate(PostDto postDto) {
+	public String productUpdate(ProductDto postDto) {
 	
 		UUID uuid = UUID.randomUUID();
-		Post post = new Post();
+		Product post = new Product();
 		
 		User principal =(User) session.getAttribute("principal");
 		

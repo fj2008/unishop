@@ -10,15 +10,15 @@
         <section class="top">
           <!-- 상품 정보 -->
           <section class="information">
-            <h3>${postEntity.productname}</h3>
+            <h3>${productEntity.productname}</h3>
             <p>size: S M L</p>
-            <p>${postEntity.price}</p>
+            <p>${productEntity.price}</p>
           </section>
 
           <!-- 상품 이미지 -->
           <section class="product-img">
             
-            <img id="img1" src="/upload/${postEntity.image}" class="rounded float" alt="...">
+            <img id="img1" src="/upload/${productEntity.image}" class="rounded float" alt="...">
             
           </section>
 

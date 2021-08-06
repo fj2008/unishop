@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.unishop.domain.payment.PayMentRepository;
 import com.cos.unishop.domain.payment.Payment;
-import com.cos.unishop.domain.post.Post;
-import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.product.Product;
+import com.cos.unishop.domain.product.ProductRepository;
 import com.cos.unishop.domain.user.User;
 import com.cos.unishop.domain.user.UserRepository;
 
@@ -23,7 +23,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PaymentController {
 
-	private final PostRepository postRepository;
+	private final ProductRepository postRepository;
 	private final UserRepository userRepository;
 	private final PayMentRepository paymentRepository;
 	private final HttpSession session;

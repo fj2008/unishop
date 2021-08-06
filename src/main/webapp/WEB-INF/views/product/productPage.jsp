@@ -33,26 +33,26 @@
 	<div class="new-main-products">
 	
 		
-	<c:forEach var="post" items="${postsEntity}">
+	<c:forEach var="product" items="${productsEntity}">
 		<div class="products">
 			<div class="content-img">
 				
 
-				<a href="/post/${post.id}">
+				<a href="/post/${product.id}">
 					<div class="content-wrap-img">
 
 						<img
-							src="/upload/${post.image}"
+							src="/upload/${product.image}"
 							class="rounded float-start" alt="...">
 
 					</div>
 				</a>
 			</div>
-			<h5>${post.productname}</h5>
+			<h5>${product.productname}</h5>
 
 
 			<p>size: S M L</p>
-			<p>${post.price}</p>
+			<p>${product.price}</p>
 
 		</div>
 	</c:forEach>	

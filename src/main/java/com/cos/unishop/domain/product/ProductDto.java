@@ -1,4 +1,4 @@
-package com.cos.unishop.domain.post;
+package com.cos.unishop.domain.product;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,7 +18,7 @@ import lombok.Data;
 
 
 @Data
-public class PostDto {
+public class ProductDto {
 	
 	private String productname;
 	private MultipartFile image;

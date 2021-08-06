@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.cos.unishop.domain.post.Post;
+import com.cos.unishop.domain.product.Product;
 import com.cos.unishop.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -56,6 +56,6 @@ public class Payment {
 	
 	@JsonIgnoreProperties({"payment"})
 	@OneToMany(mappedBy = "payment",fetch = FetchType.LAZY)
-	private List<Post> posts;
+	private List<Product> posts;
 
 }

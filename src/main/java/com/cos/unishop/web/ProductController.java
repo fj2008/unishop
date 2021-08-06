@@ -8,52 +8,52 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.cos.unishop.domain.post.Post;
-import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.product.Product;
+import com.cos.unishop.domain.product.ProductRepository;
 import com.cos.unishop.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class PostController {
+public class ProductController {
 
-		private final PostRepository postRepository;
+		private final ProductRepository productRepository;
 	   private final UserRepository userRepository;
 	    private final HttpSession session;
 
 	    
 	    // 최초 사이트 유입시에 들어가는 페이지 메인페이지로 가는 컨트롤러 
-	    @GetMapping({ "/", "/post" })
+	    @GetMapping({ "/", "/product" })
 	    public String mainProduct(Model model) {
-	    	model.addAttribute("postsEntity", postRepository.findAll());
-	        return "post/index";
+	    	model.addAttribute("productsEntity", productRepository.findAll());
+	        return "product/index";
 	    }
 	    
 	    //상품 페이지로 이동하는 컨트롤러
-	    @GetMapping("/post/productPage")
+	    @GetMapping("/product/productPage")
 	    public String productPage(Model model) {
 	    	
 	    	
-	    	model.addAttribute("postsEntity", postRepository.findAll());
-	    	return "post/productPage";
+	    	model.addAttribute("productsEntity", productRepository.findAll());
+	    	return "product/productPage";
 	    }
 	    
 	    //상세정보페이지로 이동하는 컨트롤러
-	    @GetMapping("post/{id}")
+	    @GetMapping("product/{id}")
 	    public String productDetail(@PathVariable int id, Model model) {
-	    	Post postEntity = postRepository.findById(id).get();
-	    	model.addAttribute("postEntity",postEntity);
-	    	return "post/detail";
+	    	Product productEntity = productRepository.findById(id).get();
+	    	model.addAttribute("productEntity",productEntity);
+	    	return "product/detail";
 	    }
 	    
 	    //결제화면으로 이동하는 컨트롤러
-	    @GetMapping("post/payment/{id}")
+	    @GetMapping("product/payment/{id}")
 	    public String paymentPage(@PathVariable int id, Model model) {
-	    	Post postEntity = postRepository.findById(id).get();
-	    	model.addAttribute("postEntity", postEntity);
+	    	Product productEntity = productRepository.findById(id).get();
+	    	model.addAttribute("productEntity", productEntity);
 	    	
-	    	return "post/payment";
+	    	return "product/payment";
 	    }
 	    
 	

@@ -3,17 +3,17 @@ package com.cos.unishop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cos.unishop.domain.post.Post;
-import com.cos.unishop.domain.post.PostRepository;
+import com.cos.unishop.domain.product.Product;
+import com.cos.unishop.domain.product.ProductRepository;
 
 @Service
 public class Files {
 	@Autowired
-	PostRepository postRepository;
+	ProductRepository postRepository;
 	
 	
 	public void save(Files files) {
-		Post post =new Post();
+		Product post =new Product();
 		
 	}
 }
