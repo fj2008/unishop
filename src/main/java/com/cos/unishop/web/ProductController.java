@@ -44,7 +44,7 @@ public class ProductController {
 	    public String productDetail(@PathVariable int id, Model model) {
 	    	Product productEntity = productRepository.findById(id).get();
 	    	model.addAttribute("productEntity",productEntity);
-	    	return "product/detail";
+	    	return "product/detail"; 
 	    }
 	    
 	    //결제화면으로 이동하는 컨트롤러

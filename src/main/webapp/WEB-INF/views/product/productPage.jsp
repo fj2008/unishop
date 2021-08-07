@@ -38,7 +38,7 @@
 			<div class="content-img">
 				
 
-				<a href="/post/${product.id}">
+				<a href="/product/${product.id}">
 					<div class="content-wrap-img">
 
 						<img

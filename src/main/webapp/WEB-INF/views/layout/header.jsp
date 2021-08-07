@@ -41,6 +41,7 @@
 <meta charset="UTF-8">
 <title>UNISHOP</title>
     <!-- jQuery -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <!-- iamport.payment.js -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
@@ -74,21 +75,21 @@
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">셔츠</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">반팔</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">원피스</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">셔츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">반팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">원피스</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">하의</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">청바지</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">치마</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">청바지</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">치마</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">와일드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">가디건</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">트렌치코트</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">가디건</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">트렌치코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">코트</a></li>
 											</div>
 											<div class="dropdown-in">
 												<button type="button" class="btn-close" aria-label="Close"></button>
@@ -102,21 +103,21 @@
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">셔츠</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">반팔</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">긴팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">셔츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">반팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">긴팔</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">하의</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">청바지</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">슬랙스</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">청바지</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">슬랙스</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">와일드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>
-												<li><a class="dropdown-item" href="/post/productPage">가디건</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">트렌치코트</a></li>
-												<li><a class="dropdown-item" href="/post/productPage">코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">가디건</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">트렌치코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage">코트</a></li>
 											</div>
 											<div class="dropdown-in">
 												<button type="button" class="btn-close" aria-label="Close"></button>
@@ -159,7 +160,7 @@
 										</div>
 
 										<div>
-											<a href="/post" onclick="logout()"><img
+											<a href="/product" onclick="logout()"><img
 												src="https://img.icons8.com/windows/32/000000/user-male-circle.png" /></a>
 											<!-- 여기 로그아웃이미지 삽입 -->
 											<!-- 일단 버튼으로 때웁니다 -->

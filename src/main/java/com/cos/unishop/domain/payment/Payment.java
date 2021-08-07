@@ -49,13 +49,9 @@ public class Payment {
 	private String receipt_url;
 	private String status;
 
-	@JsonIgnoreProperties({ "user" })
+	
+	@JsonIgnoreProperties({"payments"})
 	@JoinColumn(name = "user_id")
 	@ManyToOne
 	private User user;
-	
-	@JsonIgnoreProperties({"payment"})
-	@OneToMany(mappedBy = "payment",fetch = FetchType.LAZY)
-	private List<Product> posts;
-
 }

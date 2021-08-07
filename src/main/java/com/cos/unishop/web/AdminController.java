@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class AdminController {
 
-	private final ProductRepository postRepository;
+	private final ProductRepository productRepository;
 	private final UserRepository userRepository;
 	private final HttpSession session;
 
@@ -49,34 +49,34 @@ public class AdminController {
 	
 	// 관리자 상품업데이트컨트롤러
 	@PostMapping("/admin/update")
-	public String productUpdate(ProductDto postDto) {
+	public String productUpdate(ProductDto productDto) {
 	
 		UUID uuid = UUID.randomUUID();
-		Product post = new Product();
+		Product product = new Product();
 		
 		User principal =(User) session.getAttribute("principal");
 		
 //		Payment payment = new Payment();
-		String imageFileName = uuid + "_"+postDto.getImage().getOriginalFilename();
+		String imageFileName = uuid + "_"+productDto.getImage().getOriginalFilename();
 		
 		Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
 
 		try {
-			Files.write(imagePath, postDto.getImage().getBytes());
+			Files.write(imagePath, productDto.getImage().getBytes());
 			
-			post.setProductname(postDto.getProductname());
-			post.setImage(imageFileName);
-			post.setDetail(postDto.getDetail());
-			post.setPrice(postDto.getPrice());
-			post.setSize(postDto.getSize());
-			post.setGender(postDto.getGender());
-			post.setCategory(postDto.getCategory());
-			post.setUser(principal);
+			product.setProductname(productDto.getProductname());
+			product.setImage(imageFileName);
+			product.setDetail(productDto.getDetail());
+			product.setPrice(productDto.getPrice());
+			product.setSize(productDto.getSize());
+			product.setGender(productDto.getGender());
+			product.setCategory(productDto.getCategory());
+			product.setUser(principal);
 //			post.setPayment();
 			
 			
-			System.out.println(post.getPayment());
-			postRepository.save(post);
+		
+			productRepository.save(product);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -39,7 +39,7 @@
             <c:otherwise>
             <div class="button-group">
               <div class="button-wrap">
-                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goPayment()">Buy</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goPayment('${productEntity.id}')">Buy</button>
               </div>
               <div class="button-wrap">
                 <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goBucket()" >Input bucket</button>
@@ -125,4 +125,18 @@
       </div>
     </main>
 
+<script>
+
+function goLoginCheck(){
+	alert("로그인하셔야 들어갈수 있는 페이지입니다.");
+	location.href = "/auth/loginForm";
+}
+
+
+function goPayment(id){
+	alert("결제화면으로 이동하시겠습니까?");
+	console.log(id)
+	location.href = "/product/payment/"+id;
+}
+</script>
 <%@ include file="../layout/footer.jsp"%>

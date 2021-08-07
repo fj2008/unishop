@@ -2,15 +2,16 @@
 	pageEncoding="UTF-8"%>
 <!--footer-->
 <div class="jumbotron text-center" style="margin-bottom: 0">
-	<p>Footer</p>
+	<p>하하하</p>
 </div>
+
 <script>
 
 
 function goPaymentAPI(productname,price,email,name,phonenumber,id,address){
 	
 	event.preventDefault();
-console.log(productname);
+	console.log(productname);
 	console.log(address);
 	console.log(email);
 	
@@ -26,7 +27,7 @@ console.log(productname);
         buyer_name: name,//이름
         buyer_tel: phonenumber,//연락처
         buyer_addr: address, //주소
-        buyer_postcode: id//상품코드
+        buyer_postcode: id //상품코드
     }, async function (rsp) {
 //         console.log(rsp);
         if (rsp.success) {
@@ -63,7 +64,7 @@ console.log(productname);
 
 
 
-		// DBÃ¬ÂÂÃ¬ÂÂ Ã­ÂÂÃ«Â§Â¤ÃªÂ°ÂÃ«Â¥Â¼ Ã«Â³ÂÃ¬ÂÂÃ«Â¡Â Ã«ÂÂ´Ã¬ÂÂÃ¬ÂÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂÃªÂ³Â¼ Ã­ÂÂ©ÃªÂ³ÂÃªÂ°Â Ã«Â³ÂÃ­ÂÂÃªÂ°Â Ã«ÂÂ©Ã«ÂÂÃ«ÂÂ¤.
+		
 		function selectAll(selectAll)  {
 		    const checkboxes 
 		      = document.querySelectorAll('input[type="checkbox"]');
@@ -77,10 +78,10 @@ console.log(productname);
 
 
 
-		//ÃªÂ²Â°Ã¬Â Â Ã­ÂÂÃ¬ÂÂ´Ã¬Â§Â
+		
 		function goPayment(){
-			alert("ÃªÂ²Â°Ã¬Â Â Ã­ÂÂÃ¬ÂÂ´Ã¬Â§ÂÃ«Â¡Â Ã¬ÂÂ´Ã«ÂÂÃ­ÂÂÃ¬ÂÂÃªÂ²Â Ã¬ÂÂµÃ«ÂÂÃªÂ¹Â?")
-			location.href = "/post/payment/${postEntity.id}";
+			alert("결제화면으로 이동하시겠습니까?");
+			location.href = "/product/payment/${postEntity.id}";
 		}
 		
 		//Ã¬ÂÂ¥Ã«Â°ÂÃªÂµÂ¬Ã«ÂÂ
@@ -90,22 +91,23 @@ console.log(productname);
 		}
 
 		function logout() {
-			alert("Ã«Â¡ÂÃªÂ·Â¸Ã¬ÂÂÃ¬ÂÂÃ­ÂÂÃ¬ÂÂÃªÂ²Â Ã¬ÂÂµÃ«ÂÂÃªÂ¹ÂÃÂ?");
+			alert("실행안됨?");
 			location.href = "/auth/loginForm";
 		}
 		
 		function goLoginCheck(){
-			alert("Ã«Â¡ÂÃªÂ·Â¸Ã¬ÂÂ¸Ã¬ÂÂ Ã­ÂÂÃ¬ÂÂÃ¬ÂÂ¼ Ã¬ÂÂ´Ã¬ÂÂ©Ã­ÂÂÃ¬ÂÂ¤Ã¬ÂÂ Ã¬ÂÂÃ«ÂÂ Ã­ÂÂÃ¬ÂÂ´Ã¬Â§Â Ã¬ÂÂÃ«ÂÂÃ«ÂÂ¤");
+			alert("로그인하셔야 들어갈수 있는 페이지입니다.");
 			location.href = "/auth/loginForm";
 		}
 		
 		
 		function goLogin(){
+			alert("실행됨?");
 			location.href = "/auth/loginForm";
 		}
 		 
 		async function acceptNumber(){
-			alert("Ã¬Â£Â¼Ã¬ÂÂÃ¬Â°Â¾ÃªÂ¸Â°");
+			alert("주소");
 			
 			let phoneNumber = document.querySelector("#textsms").value;
 			alert(phoneNumber);
