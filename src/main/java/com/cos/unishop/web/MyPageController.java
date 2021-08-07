@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cos.unishop.domain.buy.Buy;
+import com.cos.unishop.domain.buy.BuyRepository;
 import com.cos.unishop.domain.payment.PayMentRepository;
 import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.product.ProductRepository;
@@ -25,6 +27,7 @@ public class MyPageController {
 	private final ProductRepository postRepository;
 	private final UserRepository userRepository;
 	private final PayMentRepository paymetMentRepository;
+	private final BuyRepository buyRepository;
 	private final HttpSession session;
 	
 	//마이페이지로 가는 컨트롤러
@@ -48,16 +51,19 @@ public class MyPageController {
 	
 	//구매목록으로 가는 컨트롤러
 	@GetMapping("/payment/{id}")
-	public @ResponseBody List<Payment> paymentList(@PathVariable int id, Model model) {
+	public String paymentList(@PathVariable int id, Model model) {
 		
 		User principal =(User) session.getAttribute("principal");
 		int userId = principal.getId();
 		List <Payment> paymentEntity =paymetMentRepository.mfindbyUserId(userId);
 		System.out.println(paymentEntity.size());
+		List<Buy> buyEntity = buyRepository.mfindbyUserBuy(userId);
+		System.out.println(buyEntity.size());
+		model.addAttribute("buyEntity", buyEntity);
 		model.addAttribute("paymentEntity", paymentEntity);
 		
 		
-		return paymentEntity;
-		//return"user/paymentList";
+	
+		return"user/paymentList";
 	}
 }

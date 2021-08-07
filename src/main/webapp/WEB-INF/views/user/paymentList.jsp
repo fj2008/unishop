@@ -130,7 +130,7 @@
             </thead>
             <tbody>
             
-            <c:forEach var="payment" items="${paymentEntity}">
+            <c:forEach var="buy" items="${buyEntity}">
               <!-- 한줄 시작 -->  
               <tr>
                 <!-- th, for문으로 돌립니다 -->
@@ -156,12 +156,12 @@
                   <div class="product-info-box">
                     <div class="minibox-img">
                       <!-- 이미지 -->
-                      <img id="img1" src="/upload/22" class="rounded float" alt="...">
+                      <img id="img1" src="/upload/${buy.product.image}" class="rounded float" alt="...">
                     </div>
 
                     <!-- 제품 이름 -->
                     <div class="product-inforamtion" style="font-weight: 800;">
-                      ${payment.name}
+                      ${buy.product.productname}
                     </div>
 
                     <!-- 사이즈 추가 -->
@@ -169,7 +169,7 @@
                     <div class="product-size">
                       size
                       <!-- 여기에 사이즈 EL 표현식 -->
-                      <input class="num-wrap" value="22" readonly>
+                      <input class="num-wrap" value="${buy.product.size}" readonly>
                     </div>
                     <!-- 상품 페이지 버튼 -->
                     <!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
@@ -185,7 +185,7 @@
                   <td>
                     <div class="info-align-box">
                       <!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-                      
+                     ${buy.product.price}$
                     </div>
                   </td>
                   <!-- 수량 -->
