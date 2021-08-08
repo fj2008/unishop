@@ -49,7 +49,7 @@ public class ProductController {
 	    	Product productEntity = productRepository.findById(id).get();
 	    	model.addAttribute("productEntity",productEntity);
 	    	
-	    	List<Comment> commentsEntity = commentRepository.mfindAllByPostId(id);
+	    	List<Comment> commentsEntity = commentRepository.mfindAllByProductId(id);
 	    	model.addAttribute("commentsEntity", commentsEntity);
 	    	
 	    	return "product/detail"; 

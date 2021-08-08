@@ -9,4 +9,7 @@ public interface CommentRepository extends JpaRepository<Comment, Integer>{
 
 	@Query(value = "SELECT * FROM comment WHERE user_id =:id",nativeQuery = true)
 	List<Comment> mfindAllByUserId(int id);
+	
+	@Query(value = "SELECT * FROM comment WHERE product_id =:id",nativeQuery = true)
+	List<Comment> mfindAllByProductId(int id);
 }

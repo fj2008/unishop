@@ -214,6 +214,12 @@
 <!--Main-content End-->
 
 
+<script>
+function logout() {
+	alert("실행안됨?");
+	location.href = "/auth/loginForm";
+}
 
+</script>
 
 <%@ include file="../layout/footer.jsp"%>
