@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.unishop.domain.buy.Buy;
 import com.cos.unishop.domain.buy.BuyRepository;
+import com.cos.unishop.domain.comment.Comment;
+import com.cos.unishop.domain.comment.CommentRepository;
 import com.cos.unishop.domain.payment.PayMentRepository;
 import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.product.ProductRepository;
@@ -28,6 +30,7 @@ public class MyPageController {
 	private final UserRepository userRepository;
 	private final PayMentRepository paymetMentRepository;
 	private final BuyRepository buyRepository;
+	private final CommentRepository commentRepository;
 	private final HttpSession session;
 	
 	//마이페이지로 가는 컨트롤러
@@ -37,7 +40,14 @@ public class MyPageController {
 	}
 	//상품평관리하기로 가는 컨트롤러
 	@GetMapping("/CommentsManagement")
-	public String CommentsManagement() {
+	public String CommentsManagement( Model model) {
+		User principal =(User) session.getAttribute("principal");
+		int userId = principal.getId();
+		List<Comment> commentsEntity = commentRepository.mfindAllByUserId(userId);
+		
+		model.addAttribute("commentsEntity", commentsEntity);
+		
+		
 		return"user/commentsManagement";
 	}
 	//장바구니로 가는 컨트롤러

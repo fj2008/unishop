@@ -26,8 +26,11 @@ public class Comment {
 	
 	private String registrationtime;//등록일
 	private String productcs;//상품평
-	private String score;//만족도
-    
+	private String score;//만족도 점수
+    private String sizecs; //사이즈 만족도
+    private String colorcs;// 색감 만족도
+	private String image;
+	
 	@JsonIgnoreProperties({"product"})
 	@JoinColumn(name = "user_id")
 	@ManyToOne

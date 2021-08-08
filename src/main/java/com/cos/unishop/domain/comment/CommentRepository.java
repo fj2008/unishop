@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CommentRepository extends JpaRepository<Comment, Integer>{
 
-	@Query(value = "SELECT * FROM comment WHERE product_id =:id",nativeQuery = true)
-	List<Comment> mfindAllByPostId(int id);
+	@Query(value = "SELECT * FROM comment WHERE user_id =:id",nativeQuery = true)
+	List<Comment> mfindAllByUserId(int id);
 }

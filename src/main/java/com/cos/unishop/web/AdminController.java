@@ -56,7 +56,7 @@ public class AdminController {
 		
 		User principal =(User) session.getAttribute("principal");
 		
-//		Payment payment = new Payment();
+
 		String imageFileName = uuid + "_"+productDto.getImage().getOriginalFilename();
 		
 		Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
@@ -72,7 +72,7 @@ public class AdminController {
 			product.setGender(productDto.getGender());
 			product.setCategory(productDto.getCategory());
 			product.setUser(principal);
-//			post.setPayment();
+
 			
 			
 		

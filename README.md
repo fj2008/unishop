@@ -158,7 +158,7 @@ spring:
 ### 더미데이터
 ```sql
 상품평 더미데이터
-INSERT INTO comment(productcs, registrationtime, score, user_id, product_id)VALUES('상품평4','2021-08-08','4',1,1);
+INSERT INTO comment(productcs, registrationtime, score ,sizecs ,colorcs ,image , user_id, product_id)VALUES('상품평4','2021-08-08','5','조금 작아요','색감 좋아요','이미지 이름',1,1);
 ```
 
 ###주소 API 승인키
