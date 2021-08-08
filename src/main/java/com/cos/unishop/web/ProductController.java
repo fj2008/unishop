@@ -1,13 +1,16 @@
 package com.cos.unishop.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
+import com.cos.unishop.domain.comment.Comment;
+import com.cos.unishop.domain.comment.CommentRepository;
 import com.cos.unishop.domain.product.Product;
 import com.cos.unishop.domain.product.ProductRepository;
 import com.cos.unishop.domain.user.UserRepository;
@@ -20,6 +23,7 @@ public class ProductController {
 
 		private final ProductRepository productRepository;
 	   private final UserRepository userRepository;
+	   private final CommentRepository commentRepository;
 	    private final HttpSession session;
 
 	    
@@ -44,6 +48,10 @@ public class ProductController {
 	    public String productDetail(@PathVariable int id, Model model) {
 	    	Product productEntity = productRepository.findById(id).get();
 	    	model.addAttribute("productEntity",productEntity);
+	    	
+	    	List<Comment> commentsEntity = commentRepository.mfindAllByPostId(id);
+	    	model.addAttribute("commentsEntity", commentsEntity);
+	    	
 	    	return "product/detail"; 
 	    }
 	    

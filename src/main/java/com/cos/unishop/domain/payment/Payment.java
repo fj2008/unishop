@@ -31,7 +31,7 @@ public class Payment {
 	private String buyer_email;
 	private String	buyer_name;
 	private String	buyer_postcode;
-	private String	buyer_tel;
+	private String	buyer_tel; 
 	private String	card_name;
 	private String	card_number;
 	private int	card_quota;

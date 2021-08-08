@@ -98,27 +98,29 @@
               </tr>
             </thead>
             <tbody>
+            <c:forEach var="comments" items="${commentsEntity}">
               <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
-                <td>죽입니다..</td>
-                <td>@mdo</td>
-                <td>21-07-27</td>
+                <th scope="row">${comments.id}</th>
+                <td>${comments.score}</td>
+                <td>${comments.productcs}</td>
+                <td>@${comments.user.username}</td>
+                <td>${comments.registrationtime}</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>넘이뻐요</td>
-                <td>@fat</td>
-                <td>21-07-23</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Larry the Bird</td>
-                <td>사랑합니다~</td>
-                <td>@twitter</td>
-                <td>21-07-21</td>
-              </tr>
+              </c:forEach>
+<!--               <tr> -->
+<!--                 <th scope="row">2</th> -->
+<!--                 <td>Jacob</td> -->
+<!--                 <td>넘이뻐요</td> -->
+<!--                 <td>@fat</td> -->
+<!--                 <td>21-07-23</td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <th scope="row">1</th> -->
+<!--                 <td>Larry the Bird</td> -->
+<!--                 <td>사랑합니다~</td> -->
+<!--                 <td>@twitter</td> -->
+<!--                 <td>21-07-21</td> -->
+<!--               </tr> -->
             </tbody>
           </table>
         </section>
